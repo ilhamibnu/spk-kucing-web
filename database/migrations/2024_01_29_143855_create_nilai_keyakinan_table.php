@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_gejala', function (Blueprint $table) {
+        Schema::create('tb_nilai_keyakinan', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('nilai');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_gejala');
+        Schema::dropIfExists('tb_nilai_keyakinan');
     }
 };

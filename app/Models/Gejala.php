@@ -13,11 +13,16 @@ class Gejala extends Model
 
     protected $fillable = [
         'name',
-        'nilai',
+        'id_nilai_keyakinan',
     ];
 
     public function detailPenyakit()
     {
         return $this->hasMany(DetailPenyakit::class, 'id_gejala', 'id');
+    }
+
+    public function nilaiKeyakinan()
+    {
+        return $this->belongsTo(NilaiKeyakinan::class, 'id_nilai_keyakinan', 'id');
     }
 }
