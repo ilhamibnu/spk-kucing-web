@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gejala;
 use App\Models\NilaiKeyakinan;
 use Illuminate\Http\Request;
 
 
-class NilaiKeyakinanController extends Controller
+class GejalaController extends Controller
 {
     public function index()
+
     {
+        $gejala = Gejala::all();
         $nilai_keyakinan = NilaiKeyakinan::all();
-        return view('admin.pages.nilai-keyakinan', [
+        return view('admin.pages.gejala', [
+            'gejala' => $gejala,
             'nilai_keyakinan' => $nilai_keyakinan,
         ]);
     }
@@ -20,15 +24,15 @@ class NilaiKeyakinanController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'nilai' => 'required',
+            'id_nilai_keyakinan'    => 'required',
         ], [
             'name.required' => 'Nama tidak boleh kosong',
-            'nilai.required' => 'Nilai tidak boleh kosong',
+            'id_nilai_keyakinan.required' => 'Nilai tidak boleh kosong',
         ]);
 
-        $nilai = new NilaiKeyakinan();
+        $nilai = new Gejala();
         $nilai->name = $request->name;
-        $nilai->nilai = $request->nilai;
+        $nilai->id_nilai_keyakinan = $request->id_nilai_keyakinan;
         $nilai->save();
 
         return redirect()->back()->with('store', 'Data berhasil ditambahkan');
@@ -38,15 +42,15 @@ class NilaiKeyakinanController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'nilai' => 'required',
+            'id_nilai_keyakinan'    => 'required',
         ], [
             'name.required' => 'Nama tidak boleh kosong',
-            'nilai.required' => 'Nilai tidak boleh kosong',
+            'id_nilai_keyakinan.required' => 'Nilai tidak boleh kosong',
         ]);
 
-        $nilai = NilaiKeyakinan::find($id);
+        $nilai = Gejala::find($id);
         $nilai->name = $request->name;
-        $nilai->nilai = $request->nilai;
+        $nilai->id_nilai_keyakinan = $request->id_nilai_keyakinan;
         $nilai->save();
 
         return redirect()->back()->with('update', 'Data berhasil diubah');
@@ -54,7 +58,7 @@ class NilaiKeyakinanController extends Controller
 
     public function destroy($id)
     {
-        $nilai = NilaiKeyakinan::find($id);
+        $nilai = Gejala::find($id);
         $nilai->delete();
 
         return redirect()->back()->with('destroy', 'Data berhasil dihapus');
