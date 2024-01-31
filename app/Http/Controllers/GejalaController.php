@@ -12,7 +12,7 @@ class GejalaController extends Controller
     public function index()
 
     {
-        $gejala = Gejala::all();
+        $gejala = Gejala::with('nilaiKeyakinan')->get();
         $nilai_keyakinan = NilaiKeyakinan::all();
         return view('admin.pages.gejala', [
             'gejala' => $gejala,

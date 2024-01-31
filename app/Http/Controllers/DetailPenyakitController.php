@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DetailPenyakit;
 use App\Models\Gejala;
+use App\Models\Penyakit;
 use Illuminate\Http\Request;
 
 
@@ -11,11 +12,19 @@ class DetailPenyakitController extends Controller
 {
     public function index($id)
     {
-        $detailPenyakit = DetailPenyakit::where('id_penyakit', $id)->get();
-        $gejala = Gejala::all();
+        $detailPenyakit = DetailPenyakit::with(
+            'gejala'
+        )->where('id_penyakit', $id)->get();
+        $penyakit = Penyakit::find($id);
+
+        // id gejala yang belum ada di detail penyakit $id
+        $gejala = Gejala::whereNotIn('id', function ($query) use ($id) {
+            $query->select('id_gejala')->from('tb_detail_penyakit')->where('id_penyakit', $id);
+        })->get();
         return view('admin.pages.detail-penyakit', [
             'detailPenyakit' => $detailPenyakit,
             'gejala' => $gejala,
+            'penyakit' => $penyakit,
         ]);
     }
 

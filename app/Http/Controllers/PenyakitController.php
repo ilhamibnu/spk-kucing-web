@@ -20,17 +20,17 @@ class PenyakitController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'deskrpsi' => 'required',
+            'deskripsi' => 'required',
             'solusi' => 'required',
         ], [
             'name.required' => 'Nama tidak boleh kosong',
-            'deskrpsi.required' => 'Deskripsi tidak boleh kosong',
+            'deskripsi.required' => 'Deskripsi tidak boleh kosong',
             'solusi.required' => 'Solusi tidak boleh kosong',
         ]);
 
         $penyakit = new Penyakit();
         $penyakit->name = $request->name;
-        $penyakit->deskrpsi = $request->deskrpsi;
+        $penyakit->deskripsi = $request->deskripsi;
         $penyakit->solusi = $request->solusi;
         $penyakit->save();
 
@@ -41,17 +41,17 @@ class PenyakitController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'deskrpsi' => 'required',
+            'deskripsi' => 'required',
             'solusi' => 'required',
         ], [
             'name.required' => 'Nama tidak boleh kosong',
-            'deskrpsi.required' => 'Deskripsi tidak boleh kosong',
+            'deskripsi.required' => 'Deskripsi tidak boleh kosong',
             'solusi.required' => 'Solusi tidak boleh kosong',
         ]);
 
         $penyakit = Penyakit::find($id);
         $penyakit->name = $request->name;
-        $penyakit->deskrpsi = $request->deskrpsi;
+        $penyakit->deskripsi = $request->deskripsi;
         $penyakit->solusi = $request->solusi;
         $penyakit->save();
 
