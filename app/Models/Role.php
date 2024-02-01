@@ -12,7 +12,7 @@ class Role extends Model
     protected $table = "tb_role";
 
     protected $fillable = [
-        'name',
+        'nama',
     ];
 
     public function user()

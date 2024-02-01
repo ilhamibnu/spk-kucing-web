@@ -20,20 +20,20 @@ class PenyakitController extends Controller
     {
         $request->validate([
             'kode' => 'required|unique:tb_penyakit',
-            'name' => 'required',
+            'nama' => 'required',
             'deskripsi' => 'required',
             'solusi' => 'required',
         ], [
             'kode.required' => 'Kode tidak boleh kosong',
             'kode.unique' => 'Kode sudah ada',
-            'name.required' => 'Nama tidak boleh kosong',
+            'nama.required' => 'Nama tidak boleh kosong',
             'deskripsi.required' => 'Deskripsi tidak boleh kosong',
             'solusi.required' => 'Solusi tidak boleh kosong',
         ]);
 
         $penyakit = new Penyakit();
         $penyakit->kode = $request->kode;
-        $penyakit->name = $request->name;
+        $penyakit->nama = $request->nama;
         $penyakit->deskripsi = $request->deskripsi;
         $penyakit->solusi = $request->solusi;
         $penyakit->save();
@@ -45,20 +45,20 @@ class PenyakitController extends Controller
     {
         $request->validate([
             'kode' => 'required|unique:tb_penyakit,kode,' . $id . ',id',
-            'name' => 'required',
+            'nama' => 'required',
             'deskripsi' => 'required',
             'solusi' => 'required',
         ], [
             'kode.required' => 'Kode tidak boleh kosong',
             'kode.unique' => 'Kode sudah ada',
-            'name.required' => 'Nama tidak boleh kosong',
+            'nama.required' => 'Nama tidak boleh kosong',
             'deskripsi.required' => 'Deskripsi tidak boleh kosong',
             'solusi.required' => 'Solusi tidak boleh kosong',
         ]);
 
         $penyakit = Penyakit::find($id);
         $penyakit->kode = $request->kode;
-        $penyakit->name = $request->name;
+        $penyakit->nama = $request->nama;
         $penyakit->deskripsi = $request->deskripsi;
         $penyakit->solusi = $request->solusi;
         $penyakit->save();

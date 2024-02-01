@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tb_penyakit', function (Blueprint $table) {
             $table->id();
             $table->string('kode');
-            $table->string('name');
+            $table->string('nama');
             $table->longText('deskripsi');
             $table->longText('solusi');
             $table->timestamps();

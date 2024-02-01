@@ -22,17 +22,17 @@ class GejalaController extends Controller
     {
         $request->validate([
             'kode' => 'required|unique:tb_gejala',
-            'name' => 'required',
+            'nama' => 'required',
 
         ], [
             'kode.required' => 'Kode tidak boleh kosong',
             'kode.unique' => 'Kode sudah ada',
-            'name.required' => 'Nama tidak boleh kosong',
+            'nama.required' => 'Nama tidak boleh kosong',
 
         ]);
 
         $nilai = new Gejala();
-        $nilai->name = $request->name;
+        $nilai->nama = $request->nama;
         $nilai->kode = $request->kode;
         $nilai->save();
 
@@ -42,18 +42,18 @@ class GejalaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
+            'nama' => 'required',
             'kode' => 'required|unique:tb_gejala,kode,' . $id . ',id',
 
         ], [
-            'name.required' => 'Nama tidak boleh kosong',
+            'nama.required' => 'Nama tidak boleh kosong',
             'kode.required' => 'Kode tidak boleh kosong',
             'kode.unique' => 'Kode sudah ada',
 
         ]);
 
         $nilai = Gejala::find($id);
-        $nilai->name = $request->name;
+        $nilai->nama = $request->nama;
         $nilai->kode = $request->kode;
         $nilai->save();
 

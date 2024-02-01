@@ -27,7 +27,6 @@
         <form action="/simulasi-diagnosa" method="post">
             @csrf
             @method('POST')
-
             <div class="mb-3 m-3">
                 <label for="nameBasic" class="form-label">Nama</label>
                 <input type="text" name="nama" value="" id="nameBasic" class="form-control" placeholder="Enter Nama" required />
@@ -36,7 +35,7 @@
             @foreach ($gejala as $key => $value )
             <div class="mb-3 m-3">
                 <label for="exampleFormControlSelect1" class="form-label">{{ $value->name }}</label>
-                <select class="form-select" name="gejala[]" id="exampleFormControlSelect1" aria-label="Default select example">
+                <select class="form-select" name="diagnosa[]" id="exampleFormControlSelect1" aria-label="Default select example">
                     <option value="" selected>Tidak tahu</option>
                     <option value="{{ $value->id }}+-1">Pasti tidak</option>
                     <option value="{{ $value->id }}+-0.8">Hampir pasti tidak</option>

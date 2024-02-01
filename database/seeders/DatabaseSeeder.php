@@ -13,15 +13,15 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Role::create([
-            'name' => 'admin',
+            'nama' => 'admin',
         ]);
 
         Role::create([
-            'name' => 'user',
+            'nama' => 'user',
         ]);
 
         User::create([
-            'name' => 'admin',
+            'nama' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin'),
             'role_id' => 1,

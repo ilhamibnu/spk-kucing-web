@@ -40,8 +40,8 @@
                     @foreach ($detailPenyakit as $data )
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$data->gejala->name}}</td>
-                        <td>{{ $data->nilai}}</td>
+                        <td>{{$data->gejala->nama}}</td>
+                        <td>{{ $data->value_cf}}</td>
                         <td>
                             <button type="button" data-bs-toggle="modal" data-bs-target="#Edit{{ $data->id }}" class="btn btn-warning">Edit</button>
                             <button type="button" data-bs-toggle="modal" data-bs-target="#Delete{{ $data->id }}" class="btn btn-danger">Delete</button>
@@ -56,7 +56,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Anda Yakin Akan Mengahapus Data Penyakit {{ $data->name }}</p>
+                                        <p>Anda Yakin Akan Mengahapus Data Penyakit {{ $data->gejala->nama }}</p>
                                     </div>
                                     <form action="/detail-penyakit/{{ $data->id }}" method="post">
                                         @csrf
@@ -84,11 +84,11 @@
                                         @method('put')
                                         <div class="modal-body">
 
-                                            <input hidden name="id_penyakit" value="{{ $penyakit->id }}" type="text">
+                                            <input hidden name="penyakit_id" value="{{ $penyakit->id }}" type="text">
 
                                             <div class="mb-3">
-                                                <label for="exampleFormControlSelect1" class="form-label">Nilai</label>
-                                                <select class="form-select" name="id_gejala" id="exampleFormControlSelect1" aria-label="Default select example">
+                                                <label for="exampleFormControlSelect1" class="form-label">Gejala</label>
+                                                <select class="form-select" name="gejala_id" id="exampleFormControlSelect1" aria-label="Default select example">
                                                     <option selected value="{{ $data->gejala->id }}">{{ $data->gejala->name }}</option>
                                                     @foreach ($gejala as $data2 )
                                                     <option value="{{$data2->id}}">{{$data2->name}}</option>
@@ -134,12 +134,12 @@
                         @method('post')
                         <div class="modal-body">
 
-                            <input hidden name="id_penyakit" value="{{ $penyakit->id }}" type="text">
+                            <input hidden name="penyakit_id" value="{{ $penyakit->id }}" type="text">
 
                             <div class="mb-3">
-                                <label for="exampleFormControlSelect1" class="form-label">Nilai</label>
-                                <select class="form-select" name="id_gejala" id="exampleFormControlSelect1" aria-label="Default select example">
-                                    <option disabled selected>Pilih Nilai</option>
+                                <label for="exampleFormControlSelect1" class="form-label">Pilih Gejala</label>
+                                <select class="form-select" name="gejala_id" id="exampleFormControlSelect1" aria-label="Default select example">
+                                    <option disabled selected>Pilih Gejala</option>
                                     @foreach ($gejala as $data2 )
                                     <option value="{{$data2->id}}">{{$data2->name}}</option>
                                     @endforeach

@@ -41,7 +41,7 @@
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$data->kode}}</td>
-                        <td>{{$data->name}}</td>
+                        <td>{{$data->nama}}</td>
                         <td>
                             <a class="btn btn-dark" href="/detail-penyakit/{{ $data->id }}">Detail Penyakit</a>
                             <button type="button" data-bs-toggle="modal" data-bs-target="#Detail{{ $data->id }}" class="btn btn-info">Detail</button>
@@ -58,7 +58,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Anda Yakin Akan Mengahapus Data Penyakit {{ $data->name }}</p>
+                                        <p>Anda Yakin Akan Mengahapus Data Penyakit {{ $data->nama }}</p>
                                     </div>
                                     <form action="/penyakit/{{ $data->id }}" method="post">
                                         @csrf
@@ -87,7 +87,7 @@
                                         <div class="row">
                                             <div class="col mb-3">
                                                 <label for="nameBasic" class="form-label">Name</label>
-                                                <p>{{ $data->name }}</p>
+                                                <p>{{ $data->nama }}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -135,7 +135,7 @@
                                             <div class="row">
                                                 <div class="col mb-3">
                                                     <label for="nameBasic" class="form-label">Name</label>
-                                                    <input type="text" name="name" value="{{ $data->name }}" id="nameBasic" class="form-control" placeholder="Enter Name" required />
+                                                    <input type="text" name="nama" value="{{ $data->nama }}" id="nameBasic" class="form-control" placeholder="Enter Name" required />
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -189,7 +189,7 @@
                             <div class="row">
                                 <div class="col mb-3">
                                     <label for="nameBasic" class="form-label">Name</label>
-                                    <input type="text" name="name" value="" id="nameBasic" class="form-control" placeholder="Enter Name" required />
+                                    <input type="text" name="nama" value="" id="nameBasic" class="form-control" placeholder="Enter Name" required />
                                 </div>
                             </div>
                             <div class="row">

@@ -13,7 +13,7 @@ class Penyakit extends Model
 
     protected $fillable = [
         'kode',
-        'name',
+        'nama',
         'deskripsi',
         'solusi',
     ];

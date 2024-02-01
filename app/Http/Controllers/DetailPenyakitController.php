@@ -14,12 +14,12 @@ class DetailPenyakitController extends Controller
     {
         $detailPenyakit = DetailPenyakit::with(
             'gejala'
-        )->where('id_penyakit', $id)->get();
+        )->where('penyakit_id', $id)->get();
         $penyakit = Penyakit::find($id);
 
         // id gejala yang belum ada di detail penyakit $id
         $gejala = Gejala::whereNotIn('id', function ($query) use ($id) {
-            $query->select('id_gejala')->from('tb_detail_penyakit')->where('id_penyakit', $id);
+            $query->select('gejala_id')->from('tb_detail_penyakit')->where('penyakit_id', $id);
         })->get();
         return view('admin.pages.detail-penyakit', [
             'detailPenyakit' => $detailPenyakit,
@@ -31,23 +31,23 @@ class DetailPenyakitController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_penyakit' => 'required',
-            'id_gejala' => 'required',
+            'penyakit_id' => 'required',
+            'gejala_id' => 'required',
             'value_cf' => 'required',
         ], [
-            'id_penyakit.required' => 'Penyakit tidak boleh kosong',
-            'id_gejala.required' => 'Gejala tidak boleh kosong',
+            'penyakit_id.required' => 'Penyakit tidak boleh kosong',
+            'gejala_id.required' => 'Gejala tidak boleh kosong',
             'value_cf.required' => 'Nilai tidak boleh kosong',
         ]);
 
-        $cek = DetailPenyakit::where('id_penyakit', $request->id_penyakit)->where('id_gejala', $request->id_gejala)->first();
+        $cek = DetailPenyakit::where('penyakit_id', $request->penyakit_id)->where('gejala_id', $request->gejala_id)->first();
         if ($cek) {
             return redirect()->back()->with('error', 'Data sudah ada');
         }
 
         $detailPenyakit = new DetailPenyakit();
-        $detailPenyakit->id_penyakit = $request->id_penyakit;
-        $detailPenyakit->id_gejala = $request->id_gejala;
+        $detailPenyakit->penyakit_id = $request->penyakit_id;
+        $detailPenyakit->gejala_id = $request->gejala_id;
         $detailPenyakit->value_cf = $request->value_cf;
         $detailPenyakit->save();
 
@@ -57,23 +57,23 @@ class DetailPenyakitController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id_penyakit' => 'required',
-            'id_gejala' => 'required',
+            'penyakit_id' => 'required',
+            'gejala_id' => 'required',
             'value_cf' => 'required',
         ], [
-            'id_penyakit.required' => 'Penyakit tidak boleh kosong',
-            'id_gejala.required' => 'Gejala tidak boleh kosong',
+            'penyakit_id.required' => 'Penyakit tidak boleh kosong',
+            'gejala_id.required' => 'Gejala tidak boleh kosong',
             'value_cf.required' => 'Nilai tidak boleh kosong',
         ]);
 
-        $cek = DetailPenyakit::where('id_penyakit', $request->id_penyakit)->where('id_gejala', $request->id_gejala)->first();
+        $cek = DetailPenyakit::where('penyakit_id', $request->penyakit_id)->where('gejala_id', $request->gejala_id)->first();
         if ($cek) {
             return redirect()->back()->with('error', 'Data sudah ada');
         }
 
         $detailPenyakit = DetailPenyakit::find($id);
-        $detailPenyakit->id_penyakit = $request->id_penyakit;
-        $detailPenyakit->id_gejala = $request->id_gejala;
+        $detailPenyakit->penyakit_id = $request->penyakit_id;
+        $detailPenyakit->gejala_id = $request->gejala_id;
         $detailPenyakit->value_cf = $request->value_cf;
         $detailPenyakit->save();
 
