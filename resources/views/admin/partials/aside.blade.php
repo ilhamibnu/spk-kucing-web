@@ -73,6 +73,13 @@
             </a>
         </li>
 
+        <li class="menu-item @if(request()->is('riwayat')) active @endif">
+            <a href="/riwayat" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Elements">Riwayat</div>
+            </a>
+        </li>
+
 
     </ul>
 </aside>

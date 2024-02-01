@@ -18,6 +18,11 @@ class Penyakit extends Model
         'solusi',
     ];
 
+    public function getDescriptionForEvent(string $eventName): string
+    {
+        return "You have {$eventName} penyakit";
+    }
+
     public function detailPenyakit()
     {
         return $this->hasMany(DetailPenyakit::class, 'penyakit_id', 'id');

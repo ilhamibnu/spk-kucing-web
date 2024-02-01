@@ -48,6 +48,11 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function getDescriptionForEvent(string $eventName): string
+    {
+        return "You have {$eventName} user";
+    }
+
     public function role()
     {
         return $this->belongsTo(Role::class, 'role_id', 'id');

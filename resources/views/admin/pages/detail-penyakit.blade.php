@@ -89,9 +89,9 @@
                                             <div class="mb-3">
                                                 <label for="exampleFormControlSelect1" class="form-label">Gejala</label>
                                                 <select class="form-select" name="gejala_id" id="exampleFormControlSelect1" aria-label="Default select example">
-                                                    <option selected value="{{ $data->gejala->id }}">{{ $data->gejala->name }}</option>
+                                                    <option selected value="{{ $data->gejala->id }}">{{ $data->gejala->nama }}</option>
                                                     @foreach ($gejala as $data2 )
-                                                    <option value="{{$data2->id}}">{{$data2->name}}</option>
+                                                    <option value="{{$data2->id}}">{{$data2->nama}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -141,7 +141,7 @@
                                 <select class="form-select" name="gejala_id" id="exampleFormControlSelect1" aria-label="Default select example">
                                     <option disabled selected>Pilih Gejala</option>
                                     @foreach ($gejala as $data2 )
-                                    <option value="{{$data2->id}}">{{$data2->name}}</option>
+                                    <option value="{{$data2->id}}">{{$data2->nama}}</option>
                                     @endforeach
                                 </select>
                             </div>

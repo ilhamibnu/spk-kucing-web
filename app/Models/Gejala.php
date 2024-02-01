@@ -16,6 +16,11 @@ class Gejala extends Model
         'nama',
     ];
 
+    public function getDescriptionForEvent(string $eventName): string
+    {
+        return "You have {$eventName} gejala";
+    }
+
     public function detailPenyakit()
     {
         return $this->hasMany(DetailPenyakit::class, 'gejala_id', 'id');

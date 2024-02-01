@@ -19,7 +19,7 @@ class DetailPenyakitController extends Controller
 
         // id gejala yang belum ada di detail penyakit $id
         $gejala = Gejala::whereNotIn('id', function ($query) use ($id) {
-            $query->select('gejala_id')->from('tb_detail_penyakit')->where('penyakit_id', $id);
+            $query->select('gejala_id')->from('gejala_penyakit')->where('penyakit_id', $id);
         })->get();
         return view('admin.pages.detail-penyakit', [
             'detailPenyakit' => $detailPenyakit,

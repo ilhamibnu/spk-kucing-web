@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\NilaiKeyakinanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PenyakitController;
 use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\DetailPenyakitController;
 use App\Http\Controllers\SimulasiDiagnosaController;
+use App\Http\Controllers\RiwayatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +29,6 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('IsLogin');
 # Dashboard Controller
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
 
-# Nilai Keyakinan Controller
-Route::get('/nilai-keyakinan', [NilaiKeyakinanController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
-Route::post('/nilai-keyakinan', [NilaiKeyakinanController::class, 'store'])->middleware('IsLogin', 'IsAdmin');
-Route::put('/nilai-keyakinan/{id}', [NilaiKeyakinanController::class, 'update'])->middleware('IsLogin', 'IsAdmin');
-Route::delete('/nilai-keyakinan/{id}', [NilaiKeyakinanController::class, 'destroy'])->middleware('IsLogin', 'IsAdmin');
-
 # Penyakit Controller
 Route::get('/penyakit', [PenyakitController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
 Route::post('/penyakit', [PenyakitController::class, 'store'])->middleware('IsLogin', 'IsAdmin');
@@ -55,4 +49,8 @@ Route::delete('/detail-penyakit/{id}', [DetailPenyakitController::class, 'destro
 
 # Simulasi Diagnosa Controller
 Route::get('/simulasi-diagnosa', [SimulasiDiagnosaController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
-Route::post('/simulasi-diagnosa', [SimulasiDiagnosaController::class, 'diagnosacertainlyfactor'])->middleware('IsLogin', 'IsAdmin');
+Route::post('/simulasi-diagnosa', [SimulasiDiagnosaController::class, 'diagnosa'])->middleware('IsLogin', 'IsAdmin');
+
+# Riwayat Controller
+Route::get('/riwayat', [RiwayatController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
+Route::get('/riwayat/detail/{id}', [RiwayatController::class, 'detail'])->middleware('IsLogin', 'IsAdmin');
