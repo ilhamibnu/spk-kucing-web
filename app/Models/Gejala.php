@@ -12,17 +12,17 @@ class Gejala extends Model
     protected $table = 'tb_gejala';
 
     protected $fillable = [
+        'kode',
         'name',
-        'id_nilai_keyakinan',
     ];
 
     public function detailPenyakit()
     {
-        return $this->hasMany(DetailPenyakit::class, 'id_gejala', 'id');
+        return $this->hasMany(DetailPenyakit::class, 'gejala_id', 'id');
     }
 
-    public function nilaiKeyakinan()
+    public function penyakit()
     {
-        return $this->belongsTo(NilaiKeyakinan::class, 'id_nilai_keyakinan', 'id');
+        return $this->belongsToMany(Penyakit::class)->withPivot('value_cf');
     }
 }

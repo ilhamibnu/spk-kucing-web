@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_nilai_keyakinan', function (Blueprint $table) {
+        Schema::create('tb_riwayat', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('nilai');
+            $table->string('nama');
+            $table->text('hasil_diagnosa');
+            $table->text('cf_max');
+            $table->text('gejala_terpilih');
+            $table->string('file_pdf')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_nilai_keyakinan');
+        Schema::dropIfExists('tb_riwayat');
     }
 };

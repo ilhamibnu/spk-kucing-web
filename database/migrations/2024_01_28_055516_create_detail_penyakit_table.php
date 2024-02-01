@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('tb_detail_penyakit', function (Blueprint $table) {
             $table->id();
+            $table->string('value_cf');
             $table->timestamps();
         });
     }

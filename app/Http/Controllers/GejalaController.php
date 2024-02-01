@@ -12,27 +12,28 @@ class GejalaController extends Controller
     public function index()
 
     {
-        $gejala = Gejala::with('nilaiKeyakinan')->get();
-        $nilai_keyakinan = NilaiKeyakinan::all();
+        $gejala = Gejala::all();
         return view('admin.pages.gejala', [
             'gejala' => $gejala,
-            'nilai_keyakinan' => $nilai_keyakinan,
         ]);
     }
 
     public function store(Request $request)
     {
         $request->validate([
+            'kode' => 'required|unique:tb_gejala',
             'name' => 'required',
-            'id_nilai_keyakinan'    => 'required',
+
         ], [
+            'kode.required' => 'Kode tidak boleh kosong',
+            'kode.unique' => 'Kode sudah ada',
             'name.required' => 'Nama tidak boleh kosong',
-            'id_nilai_keyakinan.required' => 'Nilai tidak boleh kosong',
+
         ]);
 
         $nilai = new Gejala();
         $nilai->name = $request->name;
-        $nilai->id_nilai_keyakinan = $request->id_nilai_keyakinan;
+        $nilai->kode = $request->kode;
         $nilai->save();
 
         return redirect()->back()->with('store', 'Data berhasil ditambahkan');
@@ -42,15 +43,18 @@ class GejalaController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'id_nilai_keyakinan'    => 'required',
+            'kode' => 'required|unique:tb_gejala,kode,' . $id . ',id',
+
         ], [
             'name.required' => 'Nama tidak boleh kosong',
-            'id_nilai_keyakinan.required' => 'Nilai tidak boleh kosong',
+            'kode.required' => 'Kode tidak boleh kosong',
+            'kode.unique' => 'Kode sudah ada',
+
         ]);
 
         $nilai = Gejala::find($id);
         $nilai->name = $request->name;
-        $nilai->id_nilai_keyakinan = $request->id_nilai_keyakinan;
+        $nilai->kode = $request->kode;
         $nilai->save();
 
         return redirect()->back()->with('update', 'Data berhasil diubah');

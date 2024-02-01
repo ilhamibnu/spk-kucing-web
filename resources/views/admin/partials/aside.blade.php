@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="/dashboard" class="app-brand-link">
             <span class="app-brand-logo demo">
                 <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
@@ -65,10 +65,11 @@
                 <div data-i18n="Form Elements">Gejala</div>
             </a>
         </li>
-        <li class="menu-item @if(request()->is('nilai-keyakinan')) active @endif">
-            <a href="/nilai-keyakinan" class="menu-link">
+
+        <li class="menu-item @if(request()->is('simulasi-diagona')) active @endif">
+            <a href="/simulasi-diagnosa" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Elements">Nilai Keyakinan</div>
+                <div data-i18n="Form Elements">Simulasi Diagnosa</div>
             </a>
         </li>
 

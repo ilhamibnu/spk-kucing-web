@@ -457,5 +457,17 @@
     </div>
 </div>
 
+@endsection
 
+@section('script')
+@if(Session::get('login'))
+<script>
+    Swal.fire({
+        icon: 'success'
+        , title: 'Good'
+        , text: 'Login Berhasil'
+    , });
+
+</script>
+@endif
 @endsection

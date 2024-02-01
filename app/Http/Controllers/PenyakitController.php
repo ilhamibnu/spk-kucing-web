@@ -19,16 +19,20 @@ class PenyakitController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'kode' => 'required|unique:tb_penyakit',
             'name' => 'required',
             'deskripsi' => 'required',
             'solusi' => 'required',
         ], [
+            'kode.required' => 'Kode tidak boleh kosong',
+            'kode.unique' => 'Kode sudah ada',
             'name.required' => 'Nama tidak boleh kosong',
             'deskripsi.required' => 'Deskripsi tidak boleh kosong',
             'solusi.required' => 'Solusi tidak boleh kosong',
         ]);
 
         $penyakit = new Penyakit();
+        $penyakit->kode = $request->kode;
         $penyakit->name = $request->name;
         $penyakit->deskripsi = $request->deskripsi;
         $penyakit->solusi = $request->solusi;
@@ -40,16 +44,20 @@ class PenyakitController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'kode' => 'required|unique:tb_penyakit,kode,' . $id . ',id',
             'name' => 'required',
             'deskripsi' => 'required',
             'solusi' => 'required',
         ], [
+            'kode.required' => 'Kode tidak boleh kosong',
+            'kode.unique' => 'Kode sudah ada',
             'name.required' => 'Nama tidak boleh kosong',
             'deskripsi.required' => 'Deskripsi tidak boleh kosong',
             'solusi.required' => 'Solusi tidak boleh kosong',
         ]);
 
         $penyakit = Penyakit::find($id);
+        $penyakit->kode = $request->kode;
         $penyakit->name = $request->name;
         $penyakit->deskripsi = $request->deskripsi;
         $penyakit->solusi = $request->solusi;

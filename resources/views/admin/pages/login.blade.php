@@ -92,40 +92,60 @@
                         <h4 class="mb-2">Welcome to Sneat! 👋</h4>
                         <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
-                        <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+                        @if($errors->any())
+                        <div class="alert alert-danger alert-dismissible fade show mt-2">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button>
+
+
+                            <?php
+
+                                            $nomer = 1;
+
+                                            ?>
+
+                            @foreach($errors->all() as $error)
+                            <li>{{ $nomer++ }}. {{ $error }}</li>
+                            @endforeach
+                        </div>
+                        @endif
+
+                        <form class="mb-3" action="/login" method="POST">
+                            @csrf
+                            @method('post')
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email or Username</label>
-                                <input type="text" class="form-control" id="email" name="email-username" placeholder="Enter your email or username" autofocus />
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" name="email" class="form-control" id="email" name="email-username" placeholder="Enter your email or username" required autofocus />
                             </div>
                             <div class="mb-3 form-password-toggle">
                                 <div class="d-flex justify-content-between">
                                     <label class="form-label" for="password">Password</label>
-                                    <a href="auth-forgot-password-basic.html">
+                                    {{-- <a href="auth-forgot-password-basic.html">
                                         <small>Forgot Password?</small>
-                                    </a>
+                                    </a> --}}
                                 </div>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                    <input type="password" name="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" required />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
-                            <div class="mb-3">
+                            {{-- <div class="mb-3">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="remember-me" />
                                     <label class="form-check-label" for="remember-me"> Remember Me </label>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="mb-3">
-                                <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                                <button type="submit" class="btn btn-primary d-grid w-100">Sign in</button>
                             </div>
                         </form>
 
-                        <p class="text-center">
+                        {{-- <p class="text-center">
                             <span>New on our platform?</span>
                             <a href="auth-register-basic.html">
                                 <span>Create an account</span>
                             </a>
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
                 <!-- /Register -->
@@ -137,6 +157,7 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="{{ asset('admin/assets/vendor/libs/jquery/jquery.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('admin/assets/vendor/js/bootstrap.js') }}"></script>
@@ -154,5 +175,28 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if(Session::get('gagalogin'))
+    <script>
+        Swal.fire({
+            icon: 'error'
+            , title: 'Oops..'
+            , text: 'Email or Password is incorrect!'
+        , });
+
+    </script>
+    @endif
+
+    @if(Session::get('logout'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Success'
+            , text: 'Logout Successfully!'
+        , });
+
+    </script>
+    @endif
 </body>
 </html>

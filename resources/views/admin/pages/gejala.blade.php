@@ -6,6 +6,23 @@
 
     <!-- Basic Bootstrap Table -->
     <div class="card">
+        @if($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show mt-2">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+            </button>
+
+
+            <?php
+
+                            $nomer = 1;
+
+                            ?>
+
+            @foreach($errors->all() as $error)
+            <li>{{ $nomer++ }}. {{ $error }}</li>
+            @endforeach
+        </div>
+        @endif
         <div class="card-datatable table-responsive">
             <div class="text-end m-2">
                 <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#Add">Tambah</button>
@@ -14,8 +31,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Kode</th>
                         <th>Name</th>
-                        <th>Nilai</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -23,8 +40,9 @@
                     @foreach ($gejala as $data )
                     <tr>
                         <td>{{$loop->iteration}}</td>
+                        <td>{{$data->kode}}</td>
                         <td>{{$data->name}}</td>
-                        <td>{{ $data->nilaiKeyakinan->name }} - {{$data->nilaiKeyakinan->nilai}}</td>
+
                         <td>
                             <button type="button" data-bs-toggle="modal" data-bs-target="#Edit{{ $data->id }}" class="btn btn-warning">Edit</button>
                             <button type="button" data-bs-toggle="modal" data-bs-target="#Delete{{ $data->id }}" class="btn btn-danger">Delete</button>
@@ -69,21 +87,16 @@
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col mb-3">
+                                                    <label for="nameBasic" class="form-label">Kode</label>
+                                                    <input type="text" name="kode" value="{{ $data->kode }}" id="nameBasic" class="form-control" placeholder="Enter Kode" required />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col mb-3">
                                                     <label for="nameBasic" class="form-label">Name</label>
                                                     <input type="text" name="name" value="{{ $data->name }}" id="nameBasic" class="form-control" placeholder="Enter Name" required />
                                                 </div>
                                             </div>
-
-                                            <div class="mb-3">
-                                                <label for="exampleFormControlSelect1" class="form-label">Nilai</label>
-                                                <select class="form-select" name="id_nilai_keyakinan" id="exampleFormControlSelect1" aria-label="Default select example">
-                                                    <option selected value="{{ $data->id_nilai_keyakinan }}">{{ $data->nilaiKeyakinan->name }} - {{ $data->nilaiKeyakinan->nilai }}</option>
-                                                    @foreach ($nilai_keyakinan as $data2 )
-                                                    <option value="{{$data2->id}}">{{$data2->name}} - {{ $data2->nilai }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
@@ -115,20 +128,18 @@
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col mb-3">
+                                    <label for="nameBasic" class="form-label">Kode</label>
+                                    <input type="text" name="kode" value="" id="nameBasic" class="form-control" placeholder="Enter Kode" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-3">
                                     <label for="nameBasic" class="form-label">Name</label>
                                     <input type="text" name="name" value="" id="nameBasic" class="form-control" placeholder="Enter Name" required />
                                 </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="exampleFormControlSelect1" class="form-label">Nilai</label>
-                                <select class="form-select" name="id_nilai_keyakinan" id="exampleFormControlSelect1" aria-label="Default select example">
-                                    <option disabled selected>Pilih Nilai</option>
-                                    @foreach ($nilai_keyakinan as $data2 )
-                                    <option value="{{$data2->id}}">{{$data2->name}} - {{ $data2->nilai }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+
 
                         </div>
                         <div class="modal-footer">

@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tb_detail_penyakit', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_penyakit')->after('id');
-            $table->foreign('id_penyakit')->references('id')->on('tb_penyakit');
+            $table->unsignedBigInteger('penyakit_id')->after('id');
+            $table->foreign('penyakit_id')->references('id')->on('tb_penyakit');
         });
     }
 
@@ -23,8 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('tb_detail_penyakit', function (Blueprint $table) {
-            $table->dropForeign(['id_penyakit']);
-            $table->dropColumn(['id_penyakit']);
+            $table->dropForeign('tb_detail_penyakit_penyakit_id_foreign');
+            $table->dropColumn('penyakit_id');
         });
     }
 };

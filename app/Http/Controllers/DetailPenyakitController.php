@@ -33,9 +33,11 @@ class DetailPenyakitController extends Controller
         $request->validate([
             'id_penyakit' => 'required',
             'id_gejala' => 'required',
+            'value_cf' => 'required',
         ], [
             'id_penyakit.required' => 'Penyakit tidak boleh kosong',
             'id_gejala.required' => 'Gejala tidak boleh kosong',
+            'value_cf.required' => 'Nilai tidak boleh kosong',
         ]);
 
         $cek = DetailPenyakit::where('id_penyakit', $request->id_penyakit)->where('id_gejala', $request->id_gejala)->first();
@@ -46,6 +48,7 @@ class DetailPenyakitController extends Controller
         $detailPenyakit = new DetailPenyakit();
         $detailPenyakit->id_penyakit = $request->id_penyakit;
         $detailPenyakit->id_gejala = $request->id_gejala;
+        $detailPenyakit->value_cf = $request->value_cf;
         $detailPenyakit->save();
 
         return redirect()->back()->with('store', 'Data berhasil ditambahkan');
@@ -56,9 +59,11 @@ class DetailPenyakitController extends Controller
         $request->validate([
             'id_penyakit' => 'required',
             'id_gejala' => 'required',
+            'value_cf' => 'required',
         ], [
             'id_penyakit.required' => 'Penyakit tidak boleh kosong',
             'id_gejala.required' => 'Gejala tidak boleh kosong',
+            'value_cf.required' => 'Nilai tidak boleh kosong',
         ]);
 
         $cek = DetailPenyakit::where('id_penyakit', $request->id_penyakit)->where('id_gejala', $request->id_gejala)->first();
@@ -69,6 +74,7 @@ class DetailPenyakitController extends Controller
         $detailPenyakit = DetailPenyakit::find($id);
         $detailPenyakit->id_penyakit = $request->id_penyakit;
         $detailPenyakit->id_gejala = $request->id_gejala;
+        $detailPenyakit->value_cf = $request->value_cf;
         $detailPenyakit->save();
 
         return redirect()->back()->with('update', 'Data berhasil diubah');
