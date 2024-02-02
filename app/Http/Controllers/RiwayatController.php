@@ -22,4 +22,12 @@ class RiwayatController extends Controller
             'riwayat' => $riwayat,
         ]);
     }
+
+    public function print($id)
+    {
+        $riwayat = Riwayat::with('penyakit')->find($id);
+        return view('admin.pages.pdf', [
+            'riwayat' => $riwayat,
+        ]);
+    }
 }

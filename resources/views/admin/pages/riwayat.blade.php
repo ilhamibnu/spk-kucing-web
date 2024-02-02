@@ -40,10 +40,11 @@
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$data->nama}}</td>
-                        <td>{{ unserialize($data->cf_max)[1] }} <b>(<span class="text-danger">{{ number_format(unserialize($data->cf_max)[0] * 100, 2) }}%</span>)</b></td>
+                        <td>{{ unserialize($data->cf_max)[1] }} <b>(<span class="text-warning">{{ number_format(unserialize($data->cf_max)[0] * 100, 2) }}%</span>)</b></td>
                         <td>{{ $data->created_at->format('d M Y, H:m:s') }}</td>
                         <td>
                             <a class="btn btn-info" href="/riwayat/detail/{{ $data->id }}">Detail</a>
+                            <a class="btn btn-primary" href="/riwayat/print/{{ $data->id }}">Cetak</a>
                         </td>
                     </tr>
                     @endforeach
