@@ -34,7 +34,7 @@
 
             @foreach ($gejala as $key => $value )
             <div class="mb-3 m-3">
-                <label for="exampleFormControlSelect1" class="form-label">{{ $value->name }}</label>
+                <label for="exampleFormControlSelect1" class="form-label">{{ $value->nama }}</label>
                 <select class="form-select" name="diagnosa[]" id="exampleFormControlSelect1" aria-label="Default select example">
                     <option value="" selected>Tidak tahu</option>
                     <option value="{{ $value->id }}+-1">Pasti tidak</option>

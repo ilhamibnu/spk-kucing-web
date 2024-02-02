@@ -172,7 +172,7 @@ class SimulasiDiagnosaController extends Controller
 
     public function diagnosa(Request $request)
     {
-        $name = auth()->user()->name;
+        $name = $request->nama;
 
         $data = $request->all();
 
