@@ -23,26 +23,52 @@
     </div>
 </section>
 <section class="bg-light">
-    <div class="container">
+    <div id="test" class="container">
         <div class="row mb-5 pb-5">
-            @foreach ($riwayat as $data )
-            <div class="col-md-4 mt-5 d-flex align-self-stretch px-4 ftco-animate fadeInUp ftco-animated">
-                <div class="d-block services text-center">
-                    <div class="media-body p-4">
-                        <h3 class="heading">{{$data->nama}}</h3>
-                        <p>{{ $data->created_at->format('d M Y, H:m:s') }}</p>
-                        <p></p>
-                        <a href="/riwayat-user/detail/{{ $data->id }}" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
+            @include('landing.data.riwayat')
         </div>
+    </div>
+    <div class="ajax-load text-center mb-3">
+        <button id="loadmore" class="btn btn-primary">More</button>
     </div>
 </section>
 @endsection
 
 @section('script')
+
+<script>
+    var page = 1;
+    var ENDPOINT = "/riwayat-user?";
+
+    // jika tombol loadmore diklik
+    $("#loadmore").click(function() {
+        page++;
+        loadMoreData(page);
+    });
+
+    function loadMoreData(page) {
+        $.ajax({
+                url: ENDPOINT + '&page=' + page // Perhatikan penggunaan "&" sebagai pemisah parameter.
+                , type: "get"
+                , beforeSend: function() {
+                    $('#loadmore').show();
+                }
+            })
+            .done(function(data) {
+                if (data.html == "") {
+                    $('.ajax-load').html("No more records found");
+                    return;
+                }
+                $('#loadmore').show();
+                $("#test").append('<div class="row mb-5 pb-5">' + data.html + '</div>');
+            })
+            .fail(function(jqXHR, ajaxOptions, thrownError) {});
+    }
+
+</script>
+
+
+
 @if(Session::get('success'))
 <script>
     Swal.fire({
