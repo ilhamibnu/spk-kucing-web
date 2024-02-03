@@ -89,21 +89,10 @@
                 <h5 class="font-weight-bold">Kesimpulan</h5>
                 <p>Berdasarkan dari gejala yang kamu pilih atau alami juga berdasarkan Role/Basis aturan yang sudah ditentukan oleh seorang pakar penyakit maka perhitungan Algoritma Certainty Factor mengambil nilai CF yang paling pinggi yakni <b>{{ number_format(unserialize($riwayat->cf_max)[0], 3) }} ({{ number_format(unserialize($riwayat->cf_max)[0], 3) * 100 }}%)</b> yaitu <b>{{ unserialize($riwayat->cf_max)[1] }}</b></p>
             </div>
+            <div class="text-center mt-3 mb-3">
+                <a href="/riwayat-user/print/{{ $riwayat->id }}" class="btn btn-primary">Print</a>
+            </div>
         </div>
     </div>
 </section>
 @endsection
-
-@section('script')
-@if(Session::get('success'))
-<script>
-    Swal.fire({
-        icon: 'success'
-        , title: 'Good'
-        , text: 'Profil berhasil diubah'
-    , });
-
-</script>
-@endif
-@endsection
-```

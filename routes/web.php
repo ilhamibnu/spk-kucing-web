@@ -79,3 +79,4 @@ Route::post('/diagnosa-user', [DiagnosaUserController::class, 'diagnosa']);
 # Riwayat User Controller
 Route::get('/riwayat-user', [RiwayatUserController::class, 'index']);
 Route::get('/riwayat-user/detail/{id}', [RiwayatUserController::class, 'detail']);
+Route::get('/riwayat-user/print/{id}', [RiwayatUserController::class, 'printuser']);
