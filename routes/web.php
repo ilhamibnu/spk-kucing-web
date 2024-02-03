@@ -67,3 +67,5 @@ Route::get('/index', [DashboardUserController::class, 'index']);
 Route::get('/auth/google', [AuthUserController::class, 'redirect']);
 Route::get('/auth/google/callback', [AuthUserController::class, 'GoogleCallback']);
 Route::get('/auth/logout', [AuthUserController::class, 'logout']);
+Route::get('/profil', [AuthUserController::class, 'profil']);
+Route::post('/auth/profil', [AuthUserController::class, 'updateprofiluser']);

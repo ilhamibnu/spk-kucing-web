@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Laravel\Socialite\Facades\Socialite;
 use PHPMailer\PHPMailer\Exception;
+use Illuminate\Http\Request;
 
 class AuthUserController extends Controller
 {
@@ -53,5 +54,25 @@ class AuthUserController extends Controller
     {
         Auth::logout();
         return redirect('/')->with('logout', 'Anda berhasil logout');
+    }
+
+    public function profil()
+    {
+        return view('landing.pages.profil');
+    }
+
+    public function updateprofiluser(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+        ], [
+            'name.required' => 'Nama tidak boleh kosong',
+        ]);
+
+        $user = User::find(Auth::user()->id);
+        $user->name = $request->name;
+        $user->save();
+
+        return redirect('/profil')->with('success', 'Profil berhasil diubah');
     }
 }
