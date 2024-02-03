@@ -8,6 +8,9 @@ use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\DetailPenyakitController;
 use App\Http\Controllers\SimulasiDiagnosaController;
 use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\AuthUserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +24,6 @@ use App\Http\Controllers\RiwayatController;
 */
 
 # Auth Controller
-Route::get('/', [AuthController::class, 'index']);
 Route::get('/login', [AuthController::class, 'index']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('IsLogin');
@@ -55,3 +57,13 @@ Route::post('/simulasi-diagnosa', [SimulasiDiagnosaController::class, 'diagnosa'
 Route::get('/riwayat', [RiwayatController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
 Route::get('/riwayat/detail/{id}', [RiwayatController::class, 'detail'])->middleware('IsLogin', 'IsAdmin');
 Route::get('/riwayat/print/{id}', [RiwayatController::class, 'print'])->middleware('IsLogin', 'IsAdmin');
+
+
+# Dashboard User Controller
+Route::get('/', [DashboardUserController::class, 'index']);
+Route::get('/index', [DashboardUserController::class, 'index']);
+
+# Auth User Controller
+Route::get('/auth/google', [AuthUserController::class, 'redirect']);
+Route::get('/auth/google/callback', [AuthUserController::class, 'GoogleCallback']);
+Route::get('/auth/logout', [AuthUserController::class, 'logout']);
