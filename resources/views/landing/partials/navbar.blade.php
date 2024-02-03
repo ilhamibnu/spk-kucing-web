@@ -14,8 +14,8 @@
                         {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Diagnosa</a></li>
-                        <li><a class="dropdown-item" href="#">Riwayat Diagnosa</a></li>
+                        <li><a class="dropdown-item" href="/diagnosa-user">Diagnosa</a></li>
+                        <li><a class="dropdown-item" href="/riwayat-user">Riwayat Diagnosa</a></li>
                         <li><a class="dropdown-item" href="/profil">Profil</a></li>
                         <li><a class="dropdown-item" href="/auth/logout">Logout</a></li>
                     </ul>

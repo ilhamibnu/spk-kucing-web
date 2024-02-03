@@ -10,6 +10,8 @@ use App\Http\Controllers\SimulasiDiagnosaController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\AuthUserController;
+use App\Http\Controllers\DiagnosaUserController;
+use App\Http\Controllers\RiwayatUserController;
 
 
 /*
@@ -69,3 +71,11 @@ Route::get('/auth/google/callback', [AuthUserController::class, 'GoogleCallback'
 Route::get('/auth/logout', [AuthUserController::class, 'logout']);
 Route::get('/profil', [AuthUserController::class, 'profil']);
 Route::post('/auth/profil', [AuthUserController::class, 'updateprofiluser']);
+
+# Diagnosa User Controller
+Route::get('/diagnosa-user', [DiagnosaUserController::class, 'index']);
+Route::post('/diagnosa-user', [DiagnosaUserController::class, 'diagnosa']);
+
+# Riwayat User Controller
+Route::get('/riwayat-user', [RiwayatUserController::class, 'index']);
+Route::get('/riwayat-user/detail/{id}', [RiwayatUserController::class, 'detail']);
