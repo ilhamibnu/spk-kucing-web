@@ -1,4 +1,5 @@
 @extends('admin.layout.main')
+@section('title', 'Data Gejala')
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -57,7 +58,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Anda Yakin Akan Mengahapus Data Penyakit {{ $data->nama }}</p>
+                                        <p>Anda Yakin Akan Mengahapus Data Gejala {{ $data->nama }}</p>
                                     </div>
                                     <form action="/gejala/{{ $data->id }}" method="post">
                                         @csrf

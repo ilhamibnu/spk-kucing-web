@@ -20,29 +20,23 @@ class SimulasiDiagnosaController extends Controller
     public function tingkat_keyakinan($keyakinan)
     {
         switch ($keyakinan) {
-            case -0.8:
-                return 'Hampir pasti tidak';
+            case 0:
+                return 'Tidak Tahu';
                 break;
-            case -1:
-                return 'Pasti tidak';
-                break;
-            case -0.6:
-                return 'Kemungkinan besar tidak';
-                break;
-            case -0.4:
-                return 'Mungkin tidak';
+            case 0.2:
+                return 'Tidak Yakin';
                 break;
             case 0.4:
-                return 'Mungkin';
+                return 'Ya, Sedikit Yakin';
                 break;
             case 0.6:
-                return 'Sangat Mungkin';
+                return 'Ya, Cukup Yakin';
                 break;
             case 0.8:
-                return 'Hampir pasti';
+                return 'Ya, Yakin';
                 break;
             case 1:
-                return 'Pasti';
+                return 'Ya, Sangat Yakin';
                 break;
         }
     }

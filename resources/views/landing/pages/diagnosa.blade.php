@@ -38,16 +38,13 @@
                                 <div class="mb-3 m-3">
                                     <label for="exampleFormControlSelect1" class="form-label">{{ $value->nama }}</label>
                                     <select class="form-select" name="diagnosa[]" id="exampleFormControlSelect1" aria-label="Default select example">
-                                        <option value="" selected>Tidak tahu</option>
-                                        <option value="{{ $value->id }}+-1">Pasti tidak</option>
-                                        <option value="{{ $value->id }}+-0.8">Hampir pasti tidak</option>
-                                        <option value="{{ $value->id }}+-0.6">Kemungkinan besar tidak</option>
-                                        <option value="{{ $value->id }}+-0.4">Mungkin tidak</option>
-                                        <option value="{{ $value->id }}+0.4">Mungkin</option>
-                                        <option value="{{ $value->id }}+0.6">Sangat mungkin</option>
-                                        <option value="{{ $value->id }}+0.8">Hampir pasti</option>
-                                        <option value="{{ $value->id }}+1">Pasti</option>
-
+                                        {{-- <option value="{{ $value->id }}+0">Tidak Tahu</option> --}}
+                                        <option selected value="">Tidak Tahu</option>
+                                        <option value="{{ $value->id }}+0.2">Tidak Yakin</option>
+                                        <option value="{{ $value->id }}+0.4">Ya, Sedikit Yakin</option>
+                                        <option value="{{ $value->id }}+0.6">Ya, Cukup Yakin</option>
+                                        <option value="{{ $value->id }}+0.8">Ya, Yakin</option>
+                                        <option value="{{ $value->id }}+1">Ya, Sangat Yakin</option>
                                     </select>
                                 </div>
                                 @endforeach

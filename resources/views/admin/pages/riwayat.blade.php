@@ -1,4 +1,5 @@
 @extends('admin.layout.main')
+@section('title', 'Data Riwayat')
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -45,7 +46,33 @@
                         <td>
                             <a class="btn btn-info" href="/riwayat/detail/{{ $data->id }}">Detail</a>
                             <a class="btn btn-primary" href="/riwayat/print/{{ $data->id }}">Cetak</a>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#Delete{{ $data->id }}" class="btn btn-danger">Delete</button>
                         </td>
+
+                        <!-- Modal Delete -->
+                        <div class="modal fade" id="Delete{{ $data->id }}" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel1">Delete</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Anda Yakin Akan Mengahapus Data Riwayat {{ $data->nama }}</p>
+                                    </div>
+                                    <form action="/riwayat/{{ $data->id }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <button type="submit" class="btn btn-primary">Delete</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </tr>
                     @endforeach
                 </tbody>

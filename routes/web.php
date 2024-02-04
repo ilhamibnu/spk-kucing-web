@@ -59,6 +59,7 @@ Route::post('/simulasi-diagnosa', [SimulasiDiagnosaController::class, 'diagnosa'
 Route::get('/riwayat', [RiwayatController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
 Route::get('/riwayat/detail/{id}', [RiwayatController::class, 'detail'])->middleware('IsLogin', 'IsAdmin');
 Route::get('/riwayat/print/{id}', [RiwayatController::class, 'print'])->middleware('IsLogin', 'IsAdmin');
+Route::delete('/riwayat/{id}', [RiwayatController::class, 'destroy'])->middleware('IsLogin', 'IsAdmin');
 
 
 # Dashboard User Controller

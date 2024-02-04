@@ -1,5 +1,7 @@
 @extends('landing.layout.main')
 
+@section('title', 'Riwayat')
+
 @section('content')
 <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('landing/images/bg_2.jpg') }});" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>

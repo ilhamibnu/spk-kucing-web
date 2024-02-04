@@ -30,4 +30,11 @@ class RiwayatController extends Controller
             'riwayat' => $riwayat,
         ]);
     }
+
+    public function destroy($id)
+    {
+        $riwayat = Riwayat::find($id);
+        $riwayat->delete();
+        return redirect()->back()->with('destroy', 'Data berhasil dihapus');
+    }
 }
