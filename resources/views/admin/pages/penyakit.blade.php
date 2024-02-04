@@ -1,5 +1,5 @@
 @extends('admin.layout.main')
-@section('title', 'Data Penyakit')
+@section('title', '- Data Penyakit')
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">

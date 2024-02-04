@@ -1,5 +1,5 @@
 @extends('admin.layout.main')
-@section('title', 'Riwayat Detail ' . $riwayat->nama)
+@section('title', '- Riwayat Detail ' . $riwayat->nama)
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
