@@ -29,6 +29,7 @@ use App\Http\Controllers\RiwayatUserController;
 Route::get('/login', [AuthController::class, 'index']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('IsLogin');
+Route::post('/updateprofil', [AuthController::class, 'updateprofil'])->middleware('IsLogin', 'IsAdmin');
 
 # Dashboard Controller
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('IsLogin', 'IsAdmin');

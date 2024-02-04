@@ -69,9 +69,57 @@
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
-
-
                     @yield('content')
+
+                    <div class="modal fade" id="Update" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel1">Update Profil</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="/updateprofil" method="post">
+                                    @csrf
+                                    @method('post')
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col mb-3">
+                                                <label for="nameBasic" class="form-label">Nama</label>
+                                                <input type="text" name="name" value="{{ Auth::user()->name }}" id="nameBasic" class="form-control" placeholder="Enter Name" required />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col mb-3">
+                                                <label for="nameBasic" class="form-label">Email</label>
+                                                <input type="email" name="email" value="{{ Auth::user()->email }}" id="nameBasic" class="form-control" placeholder="Enter Email" required />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col mb-3">
+                                                <label for="nameBasic" class="form-label">Password</label>
+                                                <input type="password" name="password" value="" id="nameBasic" class="form-control" placeholder="Enter Password" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col mb-3">
+                                                <label for="nameBasic" class="form-label">Repassword</label>
+                                                <input type="password" name="repassword" value="" id="nameBasic" class="form-control" placeholder="Enter Repassword" />
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- / Content -->
@@ -134,6 +182,17 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if(Session::get('updateprofil'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Good'
+            , text: 'Profil Berhasil Diupdate'
+        , });
+
+    </script>
+    @endif
 
     @yield('script')
 </body>

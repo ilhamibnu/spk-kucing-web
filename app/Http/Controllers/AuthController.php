@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class AuthController extends Controller
 {
@@ -28,6 +30,39 @@ class AuthController extends Controller
         }
 
         return redirect('/login')->with('gagalogin', 'Username atau Password salah!');
+    }
+
+    public function updateprofil(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:tb_user,email,' . auth()->user()->id
+        ], [
+            'name.required' => 'Nama harus diisi!',
+            'email.required' => 'Email harus diisi!',
+            'email.unique' => 'Email sudah terdaftar!',
+        ]);
+
+        if ($request->password != null) {
+            $request->validate([
+                'password' => 'required|min:8'
+            ], [
+                'password.required' => 'Password harus diisi!',
+                'password.min' => 'Password minimal 8 karakter!'
+            ]);
+            User::where('id', auth()->user()->id)->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt($request->password)
+            ]);
+        } else {
+            User::where('id', auth()->user()->id)->update([
+                'name' => $request->name,
+                'email' => $request->email
+            ]);
+        }
+
+        return redirect()->back()->with('updateprofil', 'Profil berhasil diupdate!');
     }
 
     public function logout()

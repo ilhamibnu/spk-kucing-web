@@ -4,6 +4,21 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
+        @if($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show mt-2">
+
+
+            <?php
+
+                            $nomer = 1;
+
+                            ?>
+
+            @foreach($errors->all() as $error)
+            <li>{{ $nomer++ }}. {{ $error }}</li>
+            @endforeach
+        </div>
+        @endif
         <div class="col-lg-8 mb-4 order-0">
             <div class="card">
                 <div class="d-flex align-items-end row">
