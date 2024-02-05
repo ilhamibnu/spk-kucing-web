@@ -10,9 +10,24 @@
             @if(Auth::user()->role_id == '2')
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
+
+                    @php
+                    function ismobile()
+                    {
+                    return (bool) strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile');
+                    }
+                    @endphp
+
+                    @if(ismobile())
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </a>
+
+                    @else
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </a>
+                    @endif
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/diagnosa-user">Diagnosa</a></li>
                         <li><a class="dropdown-item" href="/riwayat-user">Riwayat</a></li>

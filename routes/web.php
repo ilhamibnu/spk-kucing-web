@@ -70,15 +70,15 @@ Route::get('/index', [DashboardUserController::class, 'index']);
 # Auth User Controller
 Route::get('/auth/google', [AuthUserController::class, 'redirect']);
 Route::get('/auth/google/callback', [AuthUserController::class, 'GoogleCallback']);
-Route::get('/auth/logout', [AuthUserController::class, 'logout']);
-Route::get('/profil', [AuthUserController::class, 'profil']);
-Route::post('/auth/profil', [AuthUserController::class, 'updateprofiluser']);
+Route::get('/auth/logout', [AuthUserController::class, 'logout'])->middleware('IsLogin', 'IsUser');
+Route::get('/profil', [AuthUserController::class, 'profil'])->middleware('IsLogin', 'IsUser');
+Route::post('/auth/profil', [AuthUserController::class, 'updateprofiluser'])->middleware('IsLogin', 'IsUser');
 
 # Diagnosa User Controller
-Route::get('/diagnosa-user', [DiagnosaUserController::class, 'index']);
-Route::post('/diagnosa-user', [DiagnosaUserController::class, 'diagnosa']);
+Route::get('/diagnosa-user', [DiagnosaUserController::class, 'index'])->middleware('IsLogin', 'IsUser');
+Route::post('/diagnosa-user', [DiagnosaUserController::class, 'diagnosa'])->middleware('IsLogin', 'IsUser');
 
 # Riwayat User Controller
-Route::get('/riwayat-user', [RiwayatUserController::class, 'index']);
-Route::get('/riwayat-user/detail/{id}', [RiwayatUserController::class, 'detail']);
-Route::get('/riwayat-user/print/{id}', [RiwayatUserController::class, 'printuser']);
+Route::get('/riwayat-user', [RiwayatUserController::class, 'index'])->middleware('IsLogin', 'IsUser');
+Route::get('/riwayat-user/detail/{id}', [RiwayatUserController::class, 'detail'])->middleware('IsLogin', 'IsUser');
+Route::get('/riwayat-user/print/{id}', [RiwayatUserController::class, 'printuser'])->middleware('IsLogin', 'IsUser');
