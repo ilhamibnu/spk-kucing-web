@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\AuthUserController;
 use App\Http\Controllers\DiagnosaUserController;
 use App\Http\Controllers\RiwayatUserController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -82,3 +83,6 @@ Route::post('/diagnosa-user', [DiagnosaUserController::class, 'diagnosa'])->midd
 Route::get('/riwayat-user', [RiwayatUserController::class, 'index'])->middleware('IsLogin', 'IsUser');
 Route::get('/riwayat-user/detail/{id}', [RiwayatUserController::class, 'detail'])->middleware('IsLogin', 'IsUser');
 Route::get('/riwayat-user/print/{id}', [RiwayatUserController::class, 'printuser'])->middleware('IsLogin', 'IsUser');
+
+# User Controller
+Route::get('/user', [UserController::class, 'index'])->middleware('IsLogin', 'IsAdmin');

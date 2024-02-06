@@ -80,6 +80,13 @@
             </a>
         </li>
 
+        <li class="menu-item @if(request()->is('user')) active @endif">
+            <a href="/user" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Elements">User</div>
+            </a>
+        </li>
+
 
     </ul>
 </aside>
