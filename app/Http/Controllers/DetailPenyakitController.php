@@ -66,11 +66,6 @@ class DetailPenyakitController extends Controller
             'value_cf.required' => 'Nilai tidak boleh kosong',
         ]);
 
-        $cek = DetailPenyakit::where('penyakit_id', $request->penyakit_id)->where('gejala_id', $request->gejala_id)->first();
-        if ($cek) {
-            return redirect()->back()->with('error', 'Data sudah ada');
-        }
-
         $detailPenyakit = DetailPenyakit::find($id);
         $detailPenyakit->penyakit_id = $request->penyakit_id;
         $detailPenyakit->gejala_id = $request->gejala_id;

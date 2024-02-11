@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gejala;
+use App\Models\Penyakit;
 use App\Models\Riwayat;
 use Illuminate\Http\Request;
 
@@ -123,6 +124,7 @@ class SimulasiDiagnosaController extends Controller
 
                     $hasil_diagnosa[$final[0]->id]['hasil_cf'] = $hasil_cf;
 
+                    $kode_penyakit = $final[0]->kode;
                     $cf1 = null;
                     $cf2 = null;
                     $cf_combine = 0;
@@ -160,7 +162,8 @@ class SimulasiDiagnosaController extends Controller
         return [
             'hasil_diagnosa' => $hasil_diagnosa,
             'gejala_terpilih' => $gejala_terpilih,
-            'cf_max' => $cf_max
+            'cf_max' => $cf_max,
+            'kode_penyakit' => $kode_penyakit
         ];
     }
 
@@ -176,13 +179,15 @@ class SimulasiDiagnosaController extends Controller
             return back()->withErrors(['Terjadi sebuah kesalahan']);
         }
 
+        $penyakit = Penyakit::where('kode', $result['kode_penyakit'])->first();
+
         $riwayat = Riwayat::create([
             'nama' => $name,
             'hasil_diagnosa' => serialize($result['hasil_diagnosa']),
             'cf_max' => serialize($result['cf_max']),
             'gejala_terpilih' => serialize($result['gejala_terpilih']),
             'user_id' => auth()->id(),
-            'hasil_penyakit' => $result['cf_max'][1]
+            'penyakit_id' => $penyakit->id
         ]);
 
         return redirect('/riwayat/detail/' . $riwayat->id);

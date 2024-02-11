@@ -17,10 +17,11 @@ class Riwayat extends Model
         'hasil_diagnosa',
         'gejala_terpilih',
         'cf_max',
-        'hasil_penyakit',
+        'penyakit_id',
         'created_at',
         'updated_at'
     ];
+
 
     public function user()
     {

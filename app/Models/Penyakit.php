@@ -32,4 +32,9 @@ class Penyakit extends Model
     {
         return $this->belongsToMany(Gejala::class)->withPivot('value_cf');
     }
+
+    public function riwayat()
+    {
+        return $this->hasMany(Riwayat::class, 'penyakit_id', 'id');
+    }
 }
