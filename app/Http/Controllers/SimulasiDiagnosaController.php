@@ -181,7 +181,8 @@ class SimulasiDiagnosaController extends Controller
             'hasil_diagnosa' => serialize($result['hasil_diagnosa']),
             'cf_max' => serialize($result['cf_max']),
             'gejala_terpilih' => serialize($result['gejala_terpilih']),
-            'user_id' => auth()->id()
+            'user_id' => auth()->id(),
+            'hasil_penyakit' => $result['cf_max'][1]
         ]);
 
         return redirect('/riwayat/detail/' . $riwayat->id);

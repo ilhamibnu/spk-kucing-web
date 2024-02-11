@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_riwayat', function (Blueprint $table) {
+        Schema::create('tb_artikel', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->text('hasil_diagnosa');
-            $table->text('cf_max');
-            $table->text('gejala_terpilih');
-            $table->text('hasil_penyakit');
+            $table->string('judul');
+            $table->longText('isi');
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_riwayat');
+        Schema::dropIfExists('tb_artikel');
     }
 };

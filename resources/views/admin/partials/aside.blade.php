@@ -87,6 +87,13 @@
             </a>
         </li>
 
+        <li class="menu-item @if(request()->is('artikel')) active @endif">
+            <a href="/artikel" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Elements">Artikel</div>
+            </a>
+        </li>
+
 
     </ul>
 </aside>

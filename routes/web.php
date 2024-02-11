@@ -13,6 +13,7 @@ use App\Http\Controllers\AuthUserController;
 use App\Http\Controllers\DiagnosaUserController;
 use App\Http\Controllers\RiwayatUserController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArtikelController;
 
 
 /*
@@ -62,6 +63,13 @@ Route::get('/riwayat', [RiwayatController::class, 'index'])->middleware('IsLogin
 Route::get('/riwayat/detail/{id}', [RiwayatController::class, 'detail'])->middleware('IsLogin', 'IsAdmin');
 Route::get('/riwayat/print/{id}', [RiwayatController::class, 'print'])->middleware('IsLogin', 'IsAdmin');
 Route::delete('/riwayat/{id}', [RiwayatController::class, 'destroy'])->middleware('IsLogin', 'IsAdmin');
+
+# Artikel Controller
+Route::get('/artikel', [ArtikelController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
+Route::post('/artikel', [ArtikelController::class, 'store'])->middleware('IsLogin', 'IsAdmin');
+Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->middleware('IsLogin', 'IsAdmin');
+Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->middleware('IsLogin', 'IsAdmin');
+
 
 
 # Dashboard User Controller

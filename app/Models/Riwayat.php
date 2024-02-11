@@ -14,10 +14,10 @@ class Riwayat extends Model
     protected $fillable = [
         'nama',
         'user_id',
-        'file_pdf',
         'hasil_diagnosa',
         'gejala_terpilih',
         'cf_max',
+        'hasil_penyakit',
         'created_at',
         'updated_at'
     ];
