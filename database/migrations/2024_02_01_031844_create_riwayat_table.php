@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('hasil_diagnosa');
             $table->text('cf_max');
             $table->text('gejala_terpilih');
-            $table->text('hasil_penyakit');
             $table->timestamps();
         });
     }
