@@ -10,5 +10,5 @@ class Artikel extends Model
     use HasFactory;
 
     protected $table = 'tb_artikel';
-    protected $fillable = ['judul', 'isi'];
+    protected $fillable = ['judul', 'slug', 'isi'];
 }

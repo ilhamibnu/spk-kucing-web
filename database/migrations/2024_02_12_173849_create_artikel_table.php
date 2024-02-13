@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tb_artikel', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
+            $table->text('slug');
             $table->longText('isi');
             $table->timestamps();
         });

@@ -15,6 +15,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
+
         $jumlah_riwayat = Riwayat::count();
         $jumlah_detail_penyakit = DetailPenyakit::count();
         $jumlah_penyakit = Penyakit::count();

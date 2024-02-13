@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Riwayat;
 use Illuminate\Http\Request;
-use PhpParser\Node\Expr\FuncCall;
 
 class RiwayatUserController extends Controller
 {

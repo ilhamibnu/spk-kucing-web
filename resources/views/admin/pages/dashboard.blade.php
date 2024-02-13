@@ -90,48 +90,58 @@
             <div class="card">
                 <div class="row row-bordered g-0">
                     <div class="col-md-8">
-                        <h5 class="card-header m-0 me-2 pb-3">Presentase Riwayat Penyakit</h5>
-                        <canvas id="myChart"></canvas>
+                        <h5 class="card-header m-0 me-2 pb-3">Persentase Riwayat Penyakit</h5>
+                        <div class="card-body d-flex flex-column justify-content-center">
+                            <div id="chart"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-@endsection
+    @endsection
 
-@section('script')
-<script>
-    const ctx = document.getElementById('myChart');
-
+    @section('script')
+    <script>
     var nama = <?php echo json_encode($nama_penyakit); ?>;
     var persentase = <?php echo json_encode($persentase); ?>;
 
-    new Chart(ctx, {
-        type: 'doughnut'
-        , data: {
-            labels: nama
-            , datasets: [{
-                label: 'Presentase Penyakit'
-                , data: persentase
-                , borderWidth: 1
-            }]
-        }
-    });
+    var options = {
+        series: persentase,
+        chart: {
+            width: 380,
+            type: 'pie',
+        },
+        labels: nama,
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    };
 
-</script>
-@endsection
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
 
-@section('script')
-@if(Session::get('login'))
-<script>
-    Swal.fire({
-        icon: 'success'
-        , title: 'Good'
-        , text: 'Login Berhasil'
-    , });
+    </script>
+    @endsection
 
-</script>
-@endif
-@endsection
+    @section('script')
+    @if(Session::get('login'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Good'
+            , text: 'Login Berhasil'
+        , });
+
+    </script>
+    @endif
+    @endsection

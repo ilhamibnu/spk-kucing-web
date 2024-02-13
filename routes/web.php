@@ -75,6 +75,7 @@ Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->middlewar
 # Dashboard User Controller
 Route::get('/', [DashboardUserController::class, 'index']);
 Route::get('/index', [DashboardUserController::class, 'index']);
+Route::get('/detail-artikel/{id}', [DashboardUserController::class, 'detailartikel']);
 
 # Auth User Controller
 Route::get('/auth/google', [AuthUserController::class, 'redirect']);

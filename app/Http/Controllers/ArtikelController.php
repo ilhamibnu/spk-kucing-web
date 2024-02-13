@@ -19,14 +19,17 @@ class ArtikelController extends Controller
     {
         $request->validate([
             'judul' => 'required',
+            'slug' => 'required',
             'isi' => 'required'
         ], [
             'judul.required' => 'Judul artikel wajib diisi',
+            'slug.required' => 'Slug artikel wajib diisi',
             'isi.required' => 'Isi artikel wajib diisi'
         ]);
 
         $artikel = new Artikel;
         $artikel->judul = $request->judul;
+        $artikel->slug = $request->slug;
         $artikel->isi = $request->isi;
         $artikel->save();
 
@@ -37,14 +40,17 @@ class ArtikelController extends Controller
     {
         $request->validate([
             'judul' => 'required',
+            'slug' => 'required', // tambahkan validasi slug
             'isi' => 'required'
         ], [
             'judul.required' => 'Judul artikel wajib diisi',
+            'slug.required' => 'Slug artikel wajib diisi',
             'isi.required' => 'Isi artikel wajib diisi'
         ]);
 
         $artikel = Artikel::find($id);
         $artikel->judul = $request->judul;
+        $artikel->slug = $request->slug;
         $artikel->isi = $request->isi;
         $artikel->save();
 

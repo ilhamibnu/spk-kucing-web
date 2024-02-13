@@ -90,6 +90,12 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col mb-3">
+                                                    <label for="nameBasic" class="form-label">Slug</label>
+                                                    <textarea name="slug" class="form-control" id="" cols="30" rows="5" required>{{ $data->slug }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col mb-3">
                                                     <label for="nameBasic" class="form-label">Isi</label>
                                                     <textarea name="isi" class="form-control" id="" cols="30" rows="5" required>{{ $data->isi }}</textarea>
                                                 </div>
@@ -127,6 +133,12 @@
                                 <div class="col mb-3">
                                     <label for="nameBasic" class="form-label">Judul</label>
                                     <input type="text" name="judul" value="" id="nameBasic" class="form-control" placeholder="Enter Judul" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <label for="nameBasic" class="form-label">Slug</label>
+                                    <textarea name="slug" class="form-control" id="" cols="30" rows="5" required></textarea>
                                 </div>
                             </div>
                             <div class="row">
