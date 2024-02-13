@@ -30,9 +30,16 @@
             @include('landing.data.riwayat')
         </div>
     </div>
+    @if($jumlah_riwayat > 3)
     <div class="ajax-load text-center mb-3">
         <button id="loadmore" class="btn btn-primary">More</button>
     </div>
+    @else
+    <div class="ajax-load text-center mb-3">
+        <button id="loadmore" class="btn btn-primary" style="display: none;">More</button>
+    </div>
+    @endif
+
 </section>
 @endsection
 

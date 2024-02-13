@@ -7,11 +7,21 @@ use Illuminate\Http\Request;
 
 class DashboardUserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $jumlah_artikel = Artikel::count();
         $artikel = Artikel::paginate(3);
+
+        if ($request->ajax()) {
+            $view = view('landing.data.artikel', [
+                'artikel' => $artikel,
+            ])->render();
+            return response()->json(['html' => $view]);
+        }
+
         return view('landing.pages.index', [
             'artikel' => $artikel,
+            'jumlah_artikel' => $jumlah_artikel,
         ]);
     }
 

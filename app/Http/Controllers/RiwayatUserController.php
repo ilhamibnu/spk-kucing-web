@@ -9,6 +9,7 @@ class RiwayatUserController extends Controller
 {
     public function index(Request $request)
     {
+        $jumlah_riwayat = Riwayat::where('user_id', auth()->user()->id)->count();
         $riwayat = Riwayat::with('penyakit')->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(3);
 
         if ($request->ajax()) {
@@ -20,6 +21,7 @@ class RiwayatUserController extends Controller
 
         return view('landing.pages.riwayat', [
             'riwayat' => $riwayat,
+            'jumlah_riwayat' => $jumlah_riwayat,
         ]);
     }
 

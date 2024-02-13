@@ -114,10 +114,10 @@ class DiagnosaUserController extends Controller
 
                 if (count($final) - 1 == $key) {
                     if ($cf_max == null) {
-                        $cf_max = [$hasil_cf, "{$final[0]->nama} ({$final[0]->kode})"];
+                        $cf_max = [$hasil_cf, "{$final[0]->nama} ({$final[0]->kode})", $final[0]->id];
                     } else {
                         $cf_max = ($hasil_cf > $cf_max[0])
-                            ? [$hasil_cf, "{$final[0]->nama} ({$final[0]->kode})"]
+                            ? [$hasil_cf, "{$final[0]->nama} ({$final[0]->kode})", $final[0]->id]
                             : $cf_max;
                     }
 
@@ -182,7 +182,8 @@ class DiagnosaUserController extends Controller
             'hasil_diagnosa' => serialize($result['hasil_diagnosa']),
             'cf_max' => serialize($result['cf_max']),
             'gejala_terpilih' => serialize($result['gejala_terpilih']),
-            'user_id' => Auth::user()->id
+            'user_id' => Auth::user()->id,
+            'penyakit_id' => $result['cf_max'][2],
         ]);
 
         return redirect('/riwayat-user/detail/' . $riwayat->id);

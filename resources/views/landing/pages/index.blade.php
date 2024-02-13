@@ -233,28 +233,57 @@
                 <h2>Latest news from our blog</h2>
             </div>
         </div>
-        <div class="row d-flex">
-            @foreach ($artikel as $data)
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry align-self-stretch">
-                    <a href="blog-single.html" class="block-20 rounded" style="background-image: url('{{ asset('landing/images/image_1.jpg') }}');">
-                    </a>
-                    <div class="text p-4">
-                        <div class="meta mb-2">
-                            <div><a href="#">{{ $data->created_at }}</a></div>
-                            <div><a href="#">Admin</a></div>
-                            {{-- <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div> --}}
-                        </div>
-                        <h2 class="heading"><a href="/detail-artikel/{{ $data->id }}">{{ $data->judul }}</a></h2>
-                        <h3 class="heading"><a href="/detail-artikel/{{ $data->id }}">{{ $data->slug }}</a></h3>
-                    </div>
-                </div>
+        <div id="test">
+            <div class="row d-flex">
+                @include('landing.data.artikel')
             </div>
-            @endforeach
         </div>
     </div>
+    @if($jumlah_artikel > 3)
+    <div class="ajax-load text-center mb-3">
+        <button id="loadmore" class="btn btn-primary">More</button>
+    </div>
+    @else
+    <div class="ajax-load text-center mb-3">
+        <button id="loadmore" class="btn btn-primary" style="display: none;">More</button>
+    </div>
+    @endif
 </section>
 
+@endsection
+
+@section('script')
+<script>
+    var page = 1;
+    var ENDPOINT = "/index?";
+
+    // jika tombol loadmore diklik
+    $("#loadmore").click(function() {
+        page++;
+        loadMoreData(page);
+    });
+
+    function loadMoreData(page) {
+        $.ajax({
+                url: ENDPOINT + '&page=' + page // Perhatikan penggunaan "&" sebagai pemisah parameter.
+                , type: "get"
+                , beforeSend: function() {
+                    $('#loadmore').show();
+                }
+            })
+            .done(function(data) {
+                if (data.html == "") {
+                    $('.ajax-load').html("No more records found");
+                    return;
+                }
+                $('#loadmore').show();
+                // arahkan ke div row-d-flex yang ada di dalam div test
+                $("#test").append('<div class="row d-flex">' + data.html + '</div>');
+            })
+            .fail(function(jqXHR, ajaxOptions, thrownError) {});
+    }
+
+</script>
 @endsection
 
 @section('script')
