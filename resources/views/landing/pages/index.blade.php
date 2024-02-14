@@ -7,7 +7,7 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-11 ftco-animate text-center">
                 <h1 class="mb-4">Highest Quality Care For Pets You'll Love </h1>
-                <p><a href="#" class="btn btn-primary mr-md-4 py-3 px-4">Learn more <span class="ion-ios-arrow-forward"></span></a></p>
+                <p><a href="#" class="btn btn-info mr-md-4 py-3 px-4">Learn more <span class="ion-ios-arrow-forward"></span></a></p>
             </div>
         </div>
     </div>
@@ -241,11 +241,11 @@
     </div>
     @if($jumlah_artikel > 3)
     <div class="ajax-load text-center mb-3">
-        <button id="loadmore" class="btn btn-primary">More</button>
+        <button id="loadmore" class="btn btn-info">More</button>
     </div>
     @else
     <div class="ajax-load text-center mb-3">
-        <button id="loadmore" class="btn btn-primary" style="display: none;">More</button>
+        <button id="loadmore" class="btn btn-info" style="display: none;">More</button>
     </div>
     @endif
 </section>
