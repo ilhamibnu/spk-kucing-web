@@ -27,10 +27,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 order-md-last">
-                <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url({{ asset('landing/images/about.jpg') }});">
-                    <a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+                <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url({{ asset('artikel-foto/' . $artikel->image) }});">
+                    {{-- <a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
                         <span class="fa fa-play"></span>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>

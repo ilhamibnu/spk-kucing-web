@@ -30,6 +30,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Image</th>
                         <th>Judul</th>
                         <th>Action</th>
                     </tr>
@@ -38,6 +39,9 @@
                     @foreach ($artikel as $data )
                     <tr>
                         <td>{{$loop->iteration}}</td>
+                        <td>
+                            <img src="{{ asset('artikel-foto/' . $data->image) }}" alt="" width="100px">
+                        </td>
                         <td>{{$data->judul}}</td>
 
                         <td>
@@ -78,7 +82,7 @@
                                         <h5 class="modal-title" id="exampleModalLabel1">Edit</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <form action="/artikel/{{ $data->id }}" method="post">
+                                    <form action="/artikel/{{ $data->id }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         @method('put')
                                         <div class="modal-body">
@@ -98,6 +102,12 @@
                                                 <div class="col mb-3">
                                                     <label for="nameBasic" class="form-label">Isi</label>
                                                     <textarea name="isi" class="form-control" id="" cols="30" rows="5" required>{{ $data->isi }}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="mb-3">
+                                                    <label for="formFile" class="form-label">Image</label>
+                                                    <input class="form-control" name="image" type="file" id="formFile">
                                                 </div>
                                             </div>
                                         </div>
@@ -125,7 +135,7 @@
                         <h5 class="modal-title" id="exampleModalLabel1">Add</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="/artikel" method="post">
+                    <form action="/artikel" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('post')
                         <div class="modal-body">
@@ -145,6 +155,12 @@
                                 <div class="col mb-3">
                                     <label for="nameBasic" class="form-label">Isi</label>
                                     <textarea name="isi" class="form-control" id="" cols="30" rows="5" required></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Image</label>
+                                    <input class="form-control" name="image" type="file" id="formFile" required>
                                 </div>
                             </div>
                         </div>

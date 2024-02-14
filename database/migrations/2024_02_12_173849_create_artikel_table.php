@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('judul');
             $table->text('slug');
             $table->longText('isi');
+            $table->string('image');
             $table->timestamps();
         });
     }

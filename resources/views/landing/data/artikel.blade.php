@@ -1,7 +1,7 @@
 @foreach ($artikel as $data)
 <div class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated">
     <div class="blog-entry align-self-stretch">
-        <a href="blog-single.html" class="block-20 rounded" style="background-image: url('{{ asset('landing/images/image_1.jpg') }}');">
+        <a href="blog-single.html" class="block-20 rounded" style="background-image: url('{{ asset('artikel-foto/' . $data->image) }}');">
         </a>
         <div class="text p-4">
             <div class="meta mb-2">
