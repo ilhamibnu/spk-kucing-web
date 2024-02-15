@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Penyakit;
 use Illuminate\Http\Request;
+use App\Models\DetailPenyakit;
 
 
 class PenyakitController extends Controller
@@ -69,6 +70,10 @@ class PenyakitController extends Controller
     public function destroy($id)
     {
         $penyakit = Penyakit::find($id);
+        $cek = DetailPenyakit::where('penyakit_id', $id)->count();
+        if ($cek > 0) {
+            return redirect()->back()->with('gagal', 'Data tidak bisa dihapus');
+        }
         $penyakit->delete();
 
         return redirect()->back()->with('destroy', 'Data berhasil dihapus');

@@ -202,12 +202,12 @@
 
 </script>
 @endif
-@if(Session::get('gagal'))
+@if(Session::get('error'))
 <script>
     Swal.fire({
         icon: 'error'
         , title: 'Oops..'
-        , text: 'Data Masih Memiliki Relasi'
+        , text: 'Data Gagal Ditambahkan'
     , });
 
 </script>

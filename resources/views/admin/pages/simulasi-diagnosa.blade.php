@@ -98,6 +98,16 @@
 
 </script>
 @endif
+@if(Session::get('error'))
+<script>
+    Swal.fire({
+        icon: 'error'
+        , title: 'Oops...'
+        , text: 'Something went wrong!'
+    , });
+
+</script>
+@endif
 
 <script>
     $('#dataTable-1').DataTable({

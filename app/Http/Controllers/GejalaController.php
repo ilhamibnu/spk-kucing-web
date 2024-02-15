@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetailPenyakit;
 use App\Models\Gejala;
 use App\Models\NilaiKeyakinan;
 use Illuminate\Http\Request;
@@ -63,6 +64,10 @@ class GejalaController extends Controller
     public function destroy($id)
     {
         $nilai = Gejala::find($id);
+        $cek = DetailPenyakit::where('gejala_id', $id)->count();
+        if ($cek > 0) {
+            return redirect()->back()->with('gagal', 'Data tidak bisa dihapus');
+        }
         $nilai->delete();
 
         return redirect()->back()->with('destroy', 'Data berhasil dihapus');
