@@ -32,6 +32,10 @@ class DashboardController extends Controller
             ->groupBy('tb_penyakit.nama')
             ->get();
 
+        if ($total_riwayat == 0) {
+            $total_riwayat = 1;
+        }
+
         // Hitung persentase untuk setiap penyakit
         foreach ($riwayat_penyakit as $penyakit) {
             $persentase = ($penyakit->jumlah / $total_riwayat) * 100;
