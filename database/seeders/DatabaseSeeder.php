@@ -4,10 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Artikel;
 use App\Models\DetailPenyakit;
 use App\Models\Gejala;
 use App\Models\Penyakit;
-use App\Models\Riwayat;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -569,6 +569,69 @@ class DatabaseSeeder extends Seeder
             'penyakit_id' => 2,
             'gejala_id' => 29,
             'value_cf' => 0.8,
+        ]);
+
+        Artikel::create([
+            'judul' => 'Ringworm',
+            'slug' => 'Ringworm adalah infeksi jamur pada kulit, rambut, atau kuku yang disebabkan oleh jamur dermatofita.',
+            'isi' => 'Ringworm adalah infeksi jamur pada kulit, rambut, atau kuku yang disebabkan oleh jamur dermatofita. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'ringworm.jpg'
+        ]);
+
+        Artikel::create([
+            'judul' => 'Scabies',
+            'slug' => 'Scabies adalah infeksi kulit yang disebabkan oleh tungau. Tungau ini menyerang kulit dan menyebabkan gatal-gatal.',
+            'isi' => 'Scabies adalah infeksi kulit yang disebabkan oleh tungau. Tungau ini menyerang kulit dan menyebabkan gatal-gatal. Infeksi ini dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'scabies.jpg'
+        ]);
+
+        Artikel::create([
+            'judul' => 'Abses',
+            'slug' => 'Abses adalah kantung nanah yang terbentuk di dalam jaringan tubuh. Abses dapat terjadi di mana saja di dalam tubuh, dan dapat disebabkan oleh infeksi bakteri, virus, atau jamur.',
+            'isi' => 'Abses adalah kantung nanah yang terbentuk di dalam jaringan tubuh. Abses dapat terjadi di mana saja di dalam tubuh, dan dapat disebabkan oleh infeksi bakteri, virus, atau jamur. Abses dapat terjadi di kulit, otak, paru-paru, hati, ginjal, atau di dalam rongga mulut.',
+            'image' => 'abses.jpg'
+        ]);
+
+        Artikel::create([
+            'judul' => 'Allergic Dermatitis',
+            'slug' => 'Allergic dermatitis adalah reaksi alergi yang terjadi pada kulit. Reaksi alergi ini dapat disebabkan oleh kontak dengan bahan kimia, seperti sabun, deterjen, kosmetik, atau obat-obatan.',
+            'isi' => 'Allergic dermatitis adalah reaksi alergi yang terjadi pada kulit. Reaksi alergi ini dapat disebabkan oleh kontak dengan bahan kimia, seperti sabun, deterjen, kosmetik, atau obat-obatan. Reaksi alergi ini dapat menyebabkan gatal-gatal, kemerahan, dan bengkak pada kulit.',
+            'image' => 'allergic-dermatitis.jpg'
+        ]);
+
+        Artikel::create([
+            'judul' => 'Pinjal',
+            'slug' => 'Pinjal adalah infeksi kulit yang disebabkan oleh cacing parasit. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'isi' => 'Pinjal adalah infeksi kulit yang disebabkan oleh cacing parasit. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'pinjal.jpg'
+        ]);
+
+        Artikel::create([
+            'judul' => 'Feline Acne',
+            'slug' => 'Feline acne adalah infeksi kulit yang disebabkan oleh bakteri yang menyerang kelenjar minyak pada kulit kucing.',
+            'isi' => 'Feline acne adalah infeksi kulit yang disebabkan oleh bakteri yang menyerang kelenjar minyak pada kulit kucing. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'feline-acne.jpg'
+        ]);
+
+        Artikel::create([
+            'judul' => 'Kulit Berketombe',
+            'slug' => 'Kulit berketombe adalah kondisi kulit yang kering dan bersisik. Kondisi ini dapat disebabkan oleh kekurangan vitamin, kelembapan, atau kebersihan.',
+            'isi' => 'Kulit berketombe adalah kondisi kulit yang kering dan bersisik. Kondisi ini dapat disebabkan oleh kekurangan vitamin, kelembapan, atau kebersihan. Kulit berketombe dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'kulit-berketombe.jpg'
+        ]);
+
+        Artikel::create([
+            'judul' => 'Kutu Bulu',
+            'slug' => 'Kutu bulu adalah infeksi kulit yang disebabkan oleh kutu. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'isi' => 'Kutu bulu adalah infeksi kulit yang disebabkan oleh kutu. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'kutu-bulu.jpg'
+        ]);
+
+        Artikel::create([
+            'judul' => 'Tungu Telinga',
+            'slug' => 'Tungu telinga adalah infeksi kulit yang disebabkan oleh tungau. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'isi' => 'Tungu telinga adalah infeksi kulit yang disebabkan oleh tungau. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'tungu-telinga.jpg'
         ]);
     }
 }
