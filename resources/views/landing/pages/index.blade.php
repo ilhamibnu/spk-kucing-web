@@ -7,7 +7,11 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-11 ftco-animate text-center">
                 <h1 class="mb-4">Sistem Pakar Diagnosa Penyakit Kucing</h1>
-                <p><a href="http://127.0.0.1:8000/auth/google" class="btn btn-info mr-md-4 py-3 px-4">Diagonosa Sekarang <span class="ion-ios-arrow-forward"></span></a></p>
+                @if(Auth::check())
+                <p><a href="/diagnosa-user" class="btn btn-info mr-md-4 py-3 px-4">Diagonosa Sekarang <span class="ion-ios-arrow-forward"></span></a></p>
+                @else
+                <p><a href="/auth/google" class="btn btn-info mr-md-4 py-3 px-4">Diagonosa Sekarang <span class="ion-ios-arrow-forward"></span></a></p>
+                @endif
             </div>
         </div>
     </div>
