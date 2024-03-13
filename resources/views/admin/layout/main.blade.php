@@ -32,12 +32,6 @@
     <link rel="stylesheet" href="{{ asset('admin/new/dataTables.bootstrap4.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/new/datatablesbutton.css') }}">
 
-    {{-- <link rel="stylesheet" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css">
-    <link rel="stylesheet" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
-    <link rel="stylesheet" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css">
-    <link rel="stylesheet" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css">
-    <link rel="stylesheet" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/vendor/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css"> --}}
-
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -163,11 +157,11 @@
     <!-- Page JS -->
     <script src="{{ asset('admin/assets/js/dashboards-analytics.js') }}"></script>
 
-    <script src="{{ asset('admin/new/datatable-basic.init.js') }}"></script>
+    {{-- <script src="{{ asset('admin/new/datatable-basic.init.js') }}"></script> --}}
     <script src="{{ asset('admin/new/jquery.dataTables.js')}}"></script>
-
-    <script src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
-    <script src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/js/tables-datatables-basic.js"></script>
+    {{--
+    <script src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script> --}}
+    {{-- <script src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/js/tables-datatables-basic.js"></script> --}}
 
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
