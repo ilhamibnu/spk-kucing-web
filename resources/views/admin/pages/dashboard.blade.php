@@ -19,12 +19,12 @@
             @endforeach
         </div>
         @endif
-        <div class="col-lg-4 col-md-4 order-1">
+        <div class="col-lg-6 col-md-6 order-1">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-6 mb-4">
                     <div class="card">
-                        <div class="card-body">
-                            <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="card-body text-center ">
+                            <div class="card-title d-flex align-items-start justify-content-center">
                                 <div class="avatar flex-shrink-0">
                                     <img src="{{ asset('admin/assets/img/icons/unicons/chart-success.png') }}" alt="chart success" class="rounded" />
                                 </div>
@@ -36,8 +36,8 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-6 mb-4">
                     <div class="card">
-                        <div class="card-body">
-                            <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="card-body text-center">
+                            <div class="card-title d-flex align-items-start justify-content-center">
                                 <div class="avatar flex-shrink-0">
                                     <img src="{{ asset('admin/assets/img/icons/unicons/wallet-info.png') }}" alt="Credit Card" class="rounded" />
                                 </div>
@@ -52,12 +52,12 @@
             </div>
         </div>
         <!--/ Total Revenue -->
-        <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+        <div class="col-lg-6 col-md-6 col-lg-4 order-3 order-md-2">
             <div class="row">
                 <div class="col-6 mb-4">
                     <div class="card">
-                        <div class="card-body">
-                            <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="card-body text-center">
+                            <div class="card-title d-flex align-items-start justify-content-center">
                                 <div class="avatar flex-shrink-0">
                                     <img src="{{ asset('admin/assets/img/icons/unicons/paypal.png') }}" alt="Credit Card" class="rounded" />
                                 </div>
@@ -71,8 +71,8 @@
                 </div>
                 <div class="col-6 mb-4">
                     <div class="card">
-                        <div class="card-body">
-                            <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="card-body text-center">
+                            <div class="card-title d-flex align-items-start justify-content-center">
                                 <div class="avatar flex-shrink-0">
                                     <img src="{{ asset('admin/assets/img/icons/unicons/cc-primary.png') }}" alt="Credit Card" class="rounded" />
                                 </div>
@@ -86,15 +86,17 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
             <div class="card">
-                <div class="row row-bordered g-0">
-                    <div class="col-md-8">
-                        <h5 class="card-header m-0 me-2 pb-3">Persentase Riwayat Penyakit</h5>
-                        <div class="card-body d-flex flex-column justify-content-center">
-                            <div id="chart"></div>
-                        </div>
+                <div class="text-center">
+                    {{-- <div class="col-md-8"> --}}
+                    <h5 class="card-header m-0 me-2 pb-3">Persentase Riwayat Penyakit</h5>
+                    <div class="card-body d-flex align-items-start justify-content-center">
+                        <div id="chart"></div>
                     </div>
+                    {{-- </div> --}}
                 </div>
             </div>
         </div>
@@ -104,32 +106,35 @@
 
     @section('script')
     <script>
-    var nama = <?php echo json_encode($nama_penyakit); ?>;
-    var persentase = <?php echo json_encode($persentase); ?>;
+        var nama = <?php echo json_encode($nama_penyakit); ?>;
+        var persentase = <?php echo json_encode($persentase); ?>;
 
-    var options = {
-        series: persentase,
-        chart: {
-            width: 380,
-            type: 'pie',
-        },
-        labels: nama,
-        responsive: [{
-            breakpoint: 480,
-            options: {
-                chart: {
-                    width: 200
-                },
-                legend: {
-                    position: 'bottom'
+        // Definisikan warna yang ingin Anda gunakan untuk setiap label
+        var colors = ['#FF5733', '#33FFC1', '#335BFF', '#FF33C1', '#33FF57', '#5733FF', '#FF335B', '#33C1FF', '#FF5983'];
+
+        var options = {
+            series: persentase,
+            chart: {
+                width: 380,
+                type: 'pie',
+            },
+            labels: nama,
+            colors: colors, // Gunakan warna yang telah ditentukan
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
                 }
-            }
-        }]
-    };
+            }]
+        };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
-
     </script>
     @endsection
 

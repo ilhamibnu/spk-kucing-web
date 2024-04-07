@@ -1,78 +1,86 @@
 @extends('landing.layout.main')
-
-@section('title', '- Profil')
-
+@section('title','Profil - ')
 @section('content')
-<section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?q=80&w=1992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') }});" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text align-items-end">
-            <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Profil <i class="ion-ios-arrow-forward"></i></span></p>
-                <h1 class="mb-0 bread">Profil</h1>
+
+<div class="container">
+    <div class="page-banner">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-md-6">
+                <nav aria-label="Breadcrumb">
+                    <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">Profil</li>
+                    </ul>
+                </nav>
+                <h1 class="text-center">Profil</h1>
+            </div>
+            <div class="text-center">
+                <img class="img-fluid-2" src="{{ asset('logo/gatau7.png') }}" alt="">
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<section class="ftco-section bg-light">
+<div class="page-section">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center mb-5">
-                <h2 class="heading-section">Profil</h2>
-            </div>
+        @if($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show mt-2">
+
+
+            <?php
+
+                            $nomer = 1;
+
+                            ?>
+
+            @foreach($errors->all() as $error)
+            <li>{{ $nomer++ }}. {{ $error }}</li>
+            @endforeach
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="wrapper">
-                    <div class="row no-gutters">
-
-                        <div class="contact-wrap w-100 p-md-5 p-4">
-                            <h3 class="mb-4">Profil</h3>
-                            <form action="/auth/profil" method="POST" class="contactForm">
-                                @csrf
-                                @method('POST')
-                                <div class="row">
-                                    <input hidden value="{{ Auth::user()->id }}" type="text" name="id_user" id="">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="label" for="name">Full Name</label>
-                                            <input type="text" value="{{ Auth::user()->name }}" class="form-control" name="name" id="name" placeholder="Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="label" for="email">Email Address</label>
-                                            <input disabled type="email" value="{{ Auth::user()->email }}" class="form-control" id="email" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Update</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
+        @endif
+        <form action="/auth/profil" method="POST" class="contactForm">
+            @csrf
+            @method('POST')
+            @if(Auth::user()->google == '1')
+            <div class="form-group">
+                <label class="text-black" for="email">Name</label>
+                <input name="name" type="text" value="{{ Auth::user()->name }}" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label class="text-black" for="email">Email</label>
+                <input readonly name="email" value="{{ Auth::user()->email }}" type="text" id="email" class="form-control" required>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <input type="submit" value="Update" class="btn btn-primary">
                 </div>
             </div>
-        </div>
+            @else
+            <div class="form-group">
+                <label class="text-black" for="email">Name</label>
+                <input name="name" type="text" value="{{ Auth::user()->name }}" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label class="text-black" for="email">Email</label>
+                <input name="email" value="{{ Auth::user()->email }}" type="text" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label class="text-black" for="email">Password</label>
+                <input name="password" value="" type="password" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="text-black" for="email">Re Password</label>
+                <input name="repassword" value="" type="password" id="email" class="form-control">
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <input type="submit" value="Update" class="btn btn-primary">
+                </div>
+            </div>
+            @endif
+
+        </form>
     </div>
-</section>
-@endsection
 
-@section('script')
-@if(Session::get('success'))
-<script>
-    Swal.fire({
-        icon: 'success'
-        , title: 'Good'
-        , text: 'Profil berhasil diubah'
-    , });
-
-</script>
-@endif
+</div>
 @endsection
-```

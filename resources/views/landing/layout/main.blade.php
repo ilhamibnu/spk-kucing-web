@@ -1,70 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>SPK Penyakit Kucing @yield('title')</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpB4jfxjNRdAgLLgjX8XNc+0Op/CA6D5SqQhZuho85Sf8YBbBq15" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('logo/navlogo.jpg') }}">
+    <title>@yield('title')Sistem Pakar Diagnosa Penyakit Kucing</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ ('/landing/css/maicons.css') }}">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ ('/landing/css/bootstrap.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('landing/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ ('/landing/vendor/animate/animate.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('landing/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ ('/landing/css/theme.css') }}">
+
+    <style>
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 280px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 240px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 200px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 180px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 160px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 140px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 120px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 100px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 80px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 60px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
 
 
-    <link rel="stylesheet" href="{{ asset('landing/css/bootstrap-datepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/css/jquery.timepicker.css') }}">
+        /* // ubah ukuran foto sesuai dengan ukuran layar pengguna */
+        .img-fluid-2 {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+        }
 
-    <link rel="stylesheet" href="{{ asset('landing/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/css/style.css') }}">
+        @media (max-width: 768px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 280px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 240px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 200px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 180px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+    </style>
+
 </head>
 <body>
 
-    @include('landing.partials.navbar')
-    <!-- END nav -->
+    <div class="back-to-top"></div>
+
+    <header>
+        @include('landing.partials.nav')
+    </header>
 
     @yield('content')
 
+
     @include('landing.partials.footer')
 
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
-
-
-
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-BMNDBP8aYHbKaiXe0OsMkVZ4zj69iFMEVSOpfI4Imi21eabWoYU9MgtNspMQA7D" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="{{ asset('landing/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery-migrate-3.0.1.min.js') }}"></script>
-    <script src="{{ asset('landing/js/popper.min.js') }}"></script>
-    <script src="{{ asset('landing/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.easing.1.3.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.stellar.min.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.animateNumber.min.js') }}"></script>
-    <script src="{{ asset('landing/js/bootstrap-datepicker.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.timepicker.min.js') }}"></script>
-    <script src="{{ asset('landing/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('landing/js/scrollax.min.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="{{ asset('landing/js/google-map.js') }}"></script>
-    <script src="{{ asset('landing/js/main.js') }}"></script>
+
+    <script src="{{ ('/landing/js/jquery-3.5.1.min.js') }}"></script>
+
+    <script src="{{ ('/landing/js/bootstrap.bundle.min.js') }}"></script>
+
+    <script src="{{ ('/landing/js/google-maps.js') }}"></script>
+
+    <script src="{{ ('/landing/vendor/wow/wow.min.js') }}"></script>
+
+    <script src="{{ ('/landing/js/theme.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if(Session::get('logout'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Good'
+            , text: 'Logout Berhasil'
+        , });
+
+    </script>
+    @endif
+
+
+    @if(Session::get('login'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Good'
+            , text: 'Login Berhasil'
+        , });
+
+    </script>
+    @endif
+
+    @if(Session::get('loginerror'))
+    <script>
+        Swal.fire({
+            icon: 'error'
+            , title: 'Oops'
+            , text: 'Login Gagal'
+        , });
+
+    </script>
+    @endif
+
+    @if(Session::get('register'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Good'
+            , text: 'Register Berhasil'
+        , });
+
+    </script>
+    @endif
+
+    @if(Session::get('profilupdate'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Good'
+            , text: 'Profil Berhasil Diupdate'
+        , });
+
+    </script>
+    @endif
+
+    @if(Session::get('resetpassword'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Good'
+            , text: 'Link Reset Password Telah Dikirim Ke Email Anda'
+        , });
+
+    </script>
+    @endif
+
+    @if(Session::get('resetpasswordberhasil'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Good'
+            , text: 'Reset Password Berhasil'
+        , });
+
+    </script>
+    @endif
+
+    @if(Session::get('emailtidakada'))
+    <script>
+        Swal.fire({
+            icon: 'error'
+            , title: 'Oops'
+            , text: 'Email Tidak Terdaftar'
+        , });
+
+    </script>
+    @endif
+
+    @if(Session::get('linkkadaluarsa'))
+    <script>
+        Swal.fire({
+            icon: 'error'
+            , title: 'Oops'
+            , text: 'Link Reset Password Telah Kadaluarsa'
+        , });
+
+    </script>
+    @endif
 
     @yield('script')
 

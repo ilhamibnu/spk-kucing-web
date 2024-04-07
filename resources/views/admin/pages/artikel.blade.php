@@ -5,7 +5,6 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Data Artikel</h4>
 
-    <!-- Basic Bootstrap Table -->
     <div class="card">
         @if($errors->any())
         <div class="alert alert-danger alert-dismissible fade show mt-2">
@@ -59,7 +58,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Anda Yakin Akan Mengahapus Data Gejala {{ $data->judul }}</p>
+                                            <p>Anda Yakin Akan Mengahapus Data {{ $data->judul }}</p>
                                         </div>
                                         <form action="/artikel/{{ $data->id }}" method="post">
                                             @csrf

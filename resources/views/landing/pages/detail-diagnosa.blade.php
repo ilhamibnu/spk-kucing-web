@@ -1,30 +1,26 @@
 @extends('landing.layout.main')
-
-@section('title', '- Detail Diagnosa ' . $riwayat->nama)
-
+@section('title','Detail Diagnosa ' . $riwayat->nama . ' - ')
 @section('content')
-<section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?q=80&w=1992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') }});" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text align-items-end">
-            <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Detail Diagnosa <i class="ion-ios-arrow-forward"></i></span></p>
-                <h1 class="mb-0 bread">Detail Diagnosa</h1>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="ftco-section bg-light">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-                <h2 class="heading-section">Detail Diagnosa {{ $riwayat->nama }}</h2>
-                <p>{{ $riwayat->created_at->format('d M Y, H:m:s') }}</p>
+<div class="container">
+    <div class="page-banner">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-md-6">
+                <nav aria-label="Breadcrumb">
+                    <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">Detail Diagnosa {{ $riwayat->nama }}</li>
+                    </ul>
+                </nav>
+                <h1 class="text-center">Detail Diagnosa {{ $riwayat->nama }}</h1>
+                <div class="text-center">
+                    <p>{{ $riwayat->created_at->format('d M Y, H:m:s') }}</p>
+                </div>
+
             </div>
         </div>
     </div>
-</section>
+</div>
 <section class="bg-light">
     <div class="container">
         <div class="card-datatable table-responsive">

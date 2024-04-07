@@ -6,8 +6,11 @@ namespace Database\Seeders;
 
 use App\Models\Artikel;
 use App\Models\DetailPenyakit;
+use App\Models\Dokter;
 use App\Models\Gejala;
+use App\Models\JenisKucing;
 use App\Models\Penyakit;
+use App\Models\PenyakitKulit;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -27,6 +30,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
+            'google' => '0',
             'password' => bcrypt('admin'),
             'role_id' => 1,
         ]);
@@ -436,7 +440,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 5,
             'gejala_id' => 6,
             'value_cf' => 0,
         ]);
@@ -455,25 +459,25 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 6,
             'gejala_id' => 1,
             'value_cf' => 0.6,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 6,
             'gejala_id' => 2,
             'value_cf' => 1,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 6,
             'gejala_id' => 31,
             'value_cf' => 0.2,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 6,
             'gejala_id' => 21,
             'value_cf' => 0.8,
         ]);
@@ -492,81 +496,81 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 7,
             'gejala_id' => 2,
             'value_cf' => 0.4,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 7,
             'gejala_id' => 32,
             'value_cf' => 1,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 7,
             'gejala_id' => 33,
             'value_cf' => 1,
         ]);
 
         #Kutu Bulu
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 8,
             'gejala_id' => 1,
             'value_cf' => 1,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 8,
             'gejala_id' => 2,
             'value_cf' => 0.6,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 8,
             'gejala_id' => 6,
             'value_cf' => 0.2,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 8,
             'gejala_id' => 23,
             'value_cf' => 1,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 8,
             'gejala_id' => 24,
             'value_cf' => 0.2,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 8,
             'gejala_id' => 25,
             'value_cf' => 0.8,
         ]);
 
         #Tungu Telinga
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 9,
             'gejala_id' => 26,
             'value_cf' => 0.2,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 9,
             'gejala_id' => 27,
             'value_cf' => 0.8,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 9,
             'gejala_id' => 28,
             'value_cf' => 0,
         ]);
 
         DetailPenyakit::create([
-            'penyakit_id' => 2,
+            'penyakit_id' => 9,
             'gejala_id' => 29,
             'value_cf' => 0.8,
         ]);
@@ -632,6 +636,209 @@ class DatabaseSeeder extends Seeder
             'slug' => 'Tungu telinga adalah infeksi kulit yang disebabkan oleh tungau. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
             'isi' => 'Tungu telinga adalah infeksi kulit yang disebabkan oleh tungau. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
             'image' => 'tungu-telinga.jpg'
+        ]);
+
+
+        JenisKucing::create([
+            'judul' => 'Persia',
+            'slug' => 'persia',
+            'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
+            'image' => 'persia.jpg'
+        ]);
+
+
+        JenisKucing::create([
+            'judul' => 'Persia',
+            'slug' => 'persia',
+            'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
+            'image' => 'persia.jpg'
+        ]);
+
+        JenisKucing::create([
+            'judul' => 'Persia',
+            'slug' => 'persia',
+            'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
+            'image' => 'persia.jpg'
+        ]);
+
+        JenisKucing::create([
+            'judul' => 'Persia',
+            'slug' => 'persia',
+            'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
+            'image' => 'persia.jpg'
+        ]);
+
+        JenisKucing::create([
+            'judul' => 'Persia',
+            'slug' => 'persia',
+            'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
+            'image' => 'persia.jpg'
+        ]);
+
+
+        JenisKucing::create([
+            'judul' => 'Persia',
+            'slug' => 'persia',
+            'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
+            'image' => 'persia.jpg'
+        ]);
+
+
+        JenisKucing::create([
+            'judul' => 'Persia',
+            'slug' => 'persia',
+            'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
+            'image' => 'persia.jpg'
+        ]);
+
+
+        JenisKucing::create([
+            'judul' => 'Persia',
+            'slug' => 'persia',
+            'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
+            'image' => 'persia.jpg'
+        ]);
+
+
+        PenyakitKulit::create([
+            'judul' => 'Ringworm',
+            'slug' => 'ringworm',
+            'isi' => 'Ringworm adalah infeksi jamur pada kulit, rambut, atau kuku yang disebabkan oleh jamur dermatofita. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'ringworm.jpg'
+        ]);
+
+        PenyakitKulit::create([
+            'judul' => 'Scabies',
+            'slug' => 'scabies',
+            'isi' => 'Scabies adalah infeksi kulit yang disebabkan oleh tungau. Tungau ini menyerang kulit dan menyebabkan gatal-gatal. Infeksi ini dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'scabies.jpg'
+        ]);
+
+        PenyakitKulit::create([
+            'judul' => 'Abses',
+            'slug' => 'abses',
+            'isi' => 'Abses adalah kantung nanah yang terbentuk di dalam jaringan tubuh. Abses dapat terjadi di mana saja di dalam tubuh, dan dapat disebabkan oleh infeksi bakteri, virus, atau jamur. Abses dapat terjadi di kulit, otak, paru-paru, hati, ginjal, atau di dalam rongga mulut.',
+            'image' => 'abses.jpg'
+        ]);
+
+        PenyakitKulit::create([
+            'judul' => 'Allergic Dermatitis',
+            'slug' => 'allergic-dermatitis',
+            'isi' => 'Allergic dermatitis adalah reaksi alergi yang terjadi pada kulit. Reaksi alergi ini dapat disebabkan oleh kontak dengan bahan kimia, seperti sabun, deterjen, kosmetik, atau obat-obatan. Reaksi alergi ini dapat menyebabkan gatal-gatal, kemerahan, dan bengkak pada kulit.',
+            'image' => 'allergic-dermatitis.jpg'
+        ]);
+
+        PenyakitKulit::create([
+            'judul' => 'Pinjal',
+            'slug' => 'pinjal',
+            'isi' => 'Pinjal adalah infeksi kulit yang disebabkan oleh cacing parasit. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'pinjal.jpg'
+        ]);
+
+        PenyakitKulit::create([
+            'judul' => 'Feline Acne',
+            'slug' => 'feline-acne',
+            'isi' => 'Feline acne adalah infeksi kulit yang disebabkan oleh bakteri yang menyerang kelenjar minyak pada kulit kucing. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'feline-acne.jpg'
+        ]);
+
+        PenyakitKulit::create([
+            'judul' => 'Kulit Berketombe',
+            'slug' => 'kulit-berketombe',
+            'isi' => 'Kulit berketombe adalah kondisi kulit yang kering dan bersisik. Kondisi ini dapat disebabkan oleh kekurangan vitamin, kelembapan, atau kebersihan. Kulit berketombe dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'kulit-berketombe.jpg'
+        ]);
+
+        PenyakitKulit::create([
+            'judul' => 'Kutu Bulu',
+            'slug' => 'kutu-bulu',
+            'isi' => 'Kutu bulu adalah infeksi kulit yang disebabkan oleh kutu. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'kutu-bulu.jpg'
+        ]);
+
+        PenyakitKulit::create([
+            'judul' => 'Tungu Telinga',
+            'slug' => 'tungu-telinga',
+            'isi' => 'Tungu telinga adalah infeksi kulit yang disebabkan oleh tungau. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
+            'image' => 'tungu-telinga.jpg'
+        ]);
+
+
+        Dokter::create([
+            'name' => 'Dr. Andi',
+            'alamat' => 'Jl. Raya Bogor No. 1, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-andi.jpg',
+        ]);
+
+        Dokter::create([
+            'name' => 'Dr. Budi',
+            'alamat' => 'Jl. Raya Bogor No. 2, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-budi.jpg',
+        ]);
+
+        Dokter::create([
+            'name' => 'Dr. Cici',
+            'alamat' => 'Jl. Raya Bogor No. 3, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-cici.jpg',
+        ]);
+
+        Dokter::create([
+            'name' => 'Dr. Dedi',
+            'alamat' => 'Jl. Raya Bogor No. 4, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-dedi.jpg',
+        ]);
+
+        Dokter::create([
+            'name' => 'Dr. Eka',
+            'alamat' => 'Jl. Raya Bogor No. 5, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-eka.jpg',
+        ]);
+
+        Dokter::create([
+            'name' => 'Dr. Fani',
+            'alamat' => 'Jl. Raya Bogor No. 6, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-fani.jpg',
+        ]);
+
+        Dokter::create([
+            'name' => 'Dr. Gita',
+            'alamat' => 'Jl. Raya Bogor No. 7, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-gita.jpg',
+        ]);
+
+        Dokter::create([
+            'name' => 'Dr. Hani',
+            'alamat' => 'Jl. Raya Bogor No. 8, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-hani.jpg',
+        ]);
+
+        Dokter::create([
+            'name' => 'Dr. Ika',
+            'alamat' => 'Jl. Raya Bogor No. 9, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-ika.jpg',
+        ]);
+
+        Dokter::create([
+            'name' => 'Dr. Joko',
+            'alamat' => 'Jl. Raya Bogor No. 10, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-joko.jpg',
+        ]);
+
+        Dokter::create([
+            'name' => 'Dr. Kiki',
+            'alamat' => 'Jl. Raya Bogor No. 11, Jakarta',
+            'telepon' => '08123456789',
+            'image' => 'dr-kiki.jpg',
         ]);
     }
 }

@@ -6,19 +6,14 @@
     </div>
 
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-        <!-- Search -->
         <div class="navbar-nav align-items-center">
             <div class="nav-item d-flex align-items-center">
 
                 <span class="text-muted ms-2 d-none d-sm-block">Welcome, {{ Auth::user()->name }}</span>
             </div>
         </div>
-        <!-- /Search -->
 
         <ul class="navbar-nav flex-row align-items-center ms-auto">
-            <!-- Place this tag where you want the button to render. -->
-
-            <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     {{ Auth::user()->name }}
@@ -28,9 +23,9 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Update" href="#">
                             <i class="bx bx-user me-2"></i>
-                            <span class="align-middle" data-bs-toggle="modal" data-bs-target="#Update">My Profile</span>
+                            <span class="align-middle">My Profile</span>
                         </a>
                     </li>
                     <li>
@@ -41,7 +36,6 @@
                     </li>
                 </ul>
             </li>
-            <!--/ User -->
         </ul>
     </div>
 </nav>

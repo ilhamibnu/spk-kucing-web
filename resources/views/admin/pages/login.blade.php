@@ -37,6 +37,184 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('admin/assets/js/config.js') }}"></script>
+
+    <style>
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 280px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 240px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 200px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 180px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 160px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 140px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 120px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 100px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 80px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 60px) {
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+
+        /* // ubah ukuran foto sesuai dengan ukuran layar pengguna */
+        .img-fluid-2 {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 280px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 240px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 200px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 180px) {
+            .img-fluid-2 {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -51,7 +229,7 @@
                         <!-- Logo -->
                         <div class="app-brand justify-content-center">
                             <a href="index.html" class="app-brand-link gap-2">
-                                <img width="250px" src="{{ asset('logo/logologin.jpeg.jpg') }}" alt="">
+                                <img class="img-fluid" src="{{ asset('logo/gatau2.png') }}" alt="">
                                 <span class="app-brand-logo demo">
                                 </span>
 

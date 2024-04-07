@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use PhpParser\Node\Expr\FuncCall;
 
 class AuthController extends Controller
 {
@@ -70,4 +70,6 @@ class AuthController extends Controller
         auth()->logout();
         return redirect('/login')->with('logout', 'Logout berhasil!');
     }
+
+  
 }

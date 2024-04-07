@@ -1,32 +1,29 @@
 @extends('landing.layout.main')
-
-@section('title', '- Riwayat')
-
+@section('title','Riwayat - ')
 @section('content')
-<section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?q=80&w=1992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') }});" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text align-items-end">
-            <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Riwayat <i class="ion-ios-arrow-forward"></i></span></p>
-                <h1 class="mb-0 bread">Riwayat</h1>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="ftco-section bg-light">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-                <h2 class="heading-section">Riwayat</h2>
+<div class="container">
+    <div class="page-banner">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-md-6">
+                <nav aria-label="Breadcrumb">
+                    <ul class="breadcrumb justify-content-center py-0 bg-transparent">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">Riwayat</li>
+                    </ul>
+                </nav>
+                <h1 class="text-center">Riwayat</h1>
+            </div>
+            <div class="text-center">
+                <img class="img-fluid-2" src="{{ asset('logo/gatau6.png') }}" alt="">
             </div>
         </div>
     </div>
-</section>
-<section class="bg-light">
+</div>
+
+<div class="page-section">
     <div id="test" class="container">
-        <div class="row mb-5 pb-5">
+        <div class="row">
             @include('landing.data.riwayat')
         </div>
     </div>
@@ -39,17 +36,14 @@
         <button id="loadmore" class="btn btn-primary" style="display: none;">More</button>
     </div>
     @endif
-
-</section>
+</div>
 @endsection
 
 @section('script')
-
 <script>
     var page = 1;
     var ENDPOINT = "/riwayat-user?";
 
-    // jika tombol loadmore diklik
     $("#loadmore").click(function() {
         page++;
         loadMoreData(page);
@@ -57,7 +51,7 @@
 
     function loadMoreData(page) {
         $.ajax({
-                url: ENDPOINT + '&page=' + page // Perhatikan penggunaan "&" sebagai pemisah parameter.
+                url: ENDPOINT + '&page=' + page
                 , type: "get"
                 , beforeSend: function() {
                     $('#loadmore').show();
@@ -69,24 +63,10 @@
                     return;
                 }
                 $('#loadmore').show();
-                $("#test").append('<div class="row mb-5 pb-5">' + data.html + '</div>');
+                $("#test").append('<div class="row">' + data.html + '</div>');
             })
             .fail(function(jqXHR, ajaxOptions, thrownError) {});
     }
 
 </script>
-
-
-
-@if(Session::get('success'))
-<script>
-    Swal.fire({
-        icon: 'success'
-        , title: 'Good'
-        , text: 'Profil berhasil diubah'
-    , });
-
-</script>
-@endif
 @endsection
-```
