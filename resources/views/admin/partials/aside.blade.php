@@ -73,7 +73,7 @@
                         <div data-i18n="Error">Jenis Kucing</div>
                     </a>
                 </li>
-                <li class="menu-item @if(request()->is('data-penyakit-kucing')) active @endif">
+                <li class="menu-item @if(request()->is('data-penyakit-kulit')) active @endif">
                     <a href="/data-penyakit-kulit" class="menu-link">
                         <div data-i18n="Under Maintenance">Penyakit Kulit</div>
                     </a>
