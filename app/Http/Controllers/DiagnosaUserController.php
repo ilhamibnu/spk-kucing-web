@@ -174,7 +174,7 @@ class DiagnosaUserController extends Controller
         $result = $this->kalkulasi_cf($data);
 
         if ($result['cf_max'] == null) {
-            return redirect('/diagnosa')->with('error', 'Tidak ada hasil diagnosa');
+            return redirect('/diagnosa-user')->with('gagaldiagnosa', 'Tidak ada hasil diagnosa');
         }
 
         $riwayat = Riwayat::create([

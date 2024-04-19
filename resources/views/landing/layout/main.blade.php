@@ -322,6 +322,17 @@
     </script>
     @endif
 
+    @if(Session::get('gagaldiagnosa'))
+    <script>
+        Swal.fire({
+            icon: 'error'
+            , title: 'Oops'
+            , text: 'Gagal Melakukan Diagnosa'
+        , });
+
+    </script>
+    @endif
+
     @yield('script')
 
 </body>
