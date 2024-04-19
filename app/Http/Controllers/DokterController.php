@@ -11,7 +11,7 @@ class DokterController extends Controller
     public function index()
     {
         $artikel = Dokter::all();
-        return view('admin.pages.dokter', [
+        return view('admin.pages.data-dokter', [
             'artikel' => $artikel
         ]);
     }
@@ -73,8 +73,10 @@ class DokterController extends Controller
 
 
         if ($request->hasFile('image')) {
-            // hapus foto lama
-            unlink('dokter/' . $artikel->image);
+            // cek apa ada foto, jika ada hapus
+            if ($artikel->image) {
+                unlink('dokter/' . $artikel->image);
+            }
             // upload foto baru
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -92,8 +94,11 @@ class DokterController extends Controller
     {
         $artikel = Dokter::find($id);
 
-        // hapus foto
-        unlink('dokter/' . $artikel->image);
+        // cek apakah ada file foto
+        if ($artikel->image) {
+            // hapus foto
+            unlink('dokter/' . $artikel->image);
+        }
 
         $artikel->delete();
 

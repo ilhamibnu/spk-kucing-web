@@ -69,8 +69,12 @@ class ArtikelController extends Controller
         $artikel->isi = $request->isi;
 
         if ($request->hasFile('image')) {
-            // hapus foto lama
-            unlink('artikel-foto/' . $artikel->image);
+
+            // cek apa ada foto, jika ada hapus
+            if ($artikel->image) {
+                unlink('artikel-foto/' . $artikel->image);
+            }
+
             // upload foto baru
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -88,8 +92,10 @@ class ArtikelController extends Controller
     {
         $artikel = Artikel::find($id);
 
-        // hapus foto
-        unlink('artikel-foto/' . $artikel->image);
+        // cek apa ada foto, jika ada hapus
+        if ($artikel->image) {
+            unlink('artikel-foto/' . $artikel->image);
+        }
 
         $artikel->delete();
 

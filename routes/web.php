@@ -76,19 +76,19 @@ Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->middleware('I
 Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->middleware('IsLogin', 'IsAdmin');
 
 # Dokter Controller
-Route::get('/dokter', [DokterController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
+Route::get('/data-dokter', [DokterController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
 Route::post('/dokter', [DokterController::class, 'store'])->middleware('IsLogin', 'IsAdmin');
 Route::put('/dokter/{id}', [DokterController::class, 'update'])->middleware('IsLogin', 'IsAdmin');
 Route::delete('/dokter/{id}', [DokterController::class, 'destroy'])->middleware('IsLogin', 'IsAdmin');
 
 # Jenis Kucing Controller
-Route::get('/jenis-kucing', [JenisKucingController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
+Route::get('/data-jenis-kucing', [JenisKucingController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
 Route::post('/jenis-kucing', [JenisKucingController::class, 'store'])->middleware('IsLogin', 'IsAdmin');
 Route::put('/jenis-kucing/{id}', [JenisKucingController::class, 'update'])->middleware('IsLogin', 'IsAdmin');
 Route::delete('/jenis-kucing/{id}', [JenisKucingController::class, 'destroy'])->middleware('IsLogin', 'IsAdmin');
 
 # Penyakit Kulit Controller
-Route::get('/penyakit-kulit', [PenyakitKulitController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
+Route::get('/data-penyakit-kulit', [PenyakitKulitController::class, 'index'])->middleware('IsLogin', 'IsAdmin');
 Route::post('/penyakit-kulit', [PenyakitKulitController::class, 'store'])->middleware('IsLogin', 'IsAdmin');
 Route::put('/penyakit-kulit/{id}', [PenyakitKulitController::class, 'update'])->middleware('IsLogin', 'IsAdmin');
 Route::delete('/penyakit-kulit/{id}', [PenyakitKulitController::class, 'destroy'])->middleware('IsLogin', 'IsAdmin');

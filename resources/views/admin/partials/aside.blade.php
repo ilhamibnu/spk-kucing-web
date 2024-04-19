@@ -55,8 +55,8 @@
             </a>
         </li>
 
-        <li class="menu-item @if(request()->is('dokter')) active @endif">
-            <a href="/dokter" class="menu-link">
+        <li class="menu-item @if(request()->is('data-dokter')) active @endif">
+            <a href="/data-dokter" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Form Elements">Dokter</div>
             </a>
@@ -68,13 +68,13 @@
                 <div data-i18n="Misc">About</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item @if(request()->is('jenis-kucing')) active @endif">
-                    <a href="/jenis-kucing" class="menu-link">
+                <li class="menu-item @if(request()->is('data-jenis-kucing')) active @endif">
+                    <a href="/data-jenis-kucing" class="menu-link">
                         <div data-i18n="Error">Jenis Kucing</div>
                     </a>
                 </li>
-                <li class="menu-item @if(request()->is('penyakit-kucing')) active @endif">
-                    <a href="/penyakit-kulit" class="menu-link">
+                <li class="menu-item @if(request()->is('data-penyakit-kucing')) active @endif">
+                    <a href="/data-penyakit-kulit" class="menu-link">
                         <div data-i18n="Under Maintenance">Penyakit Kulit</div>
                     </a>
                 </li>

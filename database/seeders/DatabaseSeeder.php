@@ -579,63 +579,63 @@ class DatabaseSeeder extends Seeder
             'judul' => 'Ringworm',
             'slug' => 'Ringworm adalah infeksi jamur pada kulit, rambut, atau kuku yang disebabkan oleh jamur dermatofita.',
             'isi' => 'Ringworm adalah infeksi jamur pada kulit, rambut, atau kuku yang disebabkan oleh jamur dermatofita. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'ringworm.jpg'
+            'image' => null,
         ]);
 
         Artikel::create([
             'judul' => 'Scabies',
             'slug' => 'Scabies adalah infeksi kulit yang disebabkan oleh tungau. Tungau ini menyerang kulit dan menyebabkan gatal-gatal.',
             'isi' => 'Scabies adalah infeksi kulit yang disebabkan oleh tungau. Tungau ini menyerang kulit dan menyebabkan gatal-gatal. Infeksi ini dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'scabies.jpg'
+            'image' => null,
         ]);
 
         Artikel::create([
             'judul' => 'Abses',
             'slug' => 'Abses adalah kantung nanah yang terbentuk di dalam jaringan tubuh. Abses dapat terjadi di mana saja di dalam tubuh, dan dapat disebabkan oleh infeksi bakteri, virus, atau jamur.',
             'isi' => 'Abses adalah kantung nanah yang terbentuk di dalam jaringan tubuh. Abses dapat terjadi di mana saja di dalam tubuh, dan dapat disebabkan oleh infeksi bakteri, virus, atau jamur. Abses dapat terjadi di kulit, otak, paru-paru, hati, ginjal, atau di dalam rongga mulut.',
-            'image' => 'abses.jpg'
+            'image' => null,
         ]);
 
         Artikel::create([
             'judul' => 'Allergic Dermatitis',
             'slug' => 'Allergic dermatitis adalah reaksi alergi yang terjadi pada kulit. Reaksi alergi ini dapat disebabkan oleh kontak dengan bahan kimia, seperti sabun, deterjen, kosmetik, atau obat-obatan.',
             'isi' => 'Allergic dermatitis adalah reaksi alergi yang terjadi pada kulit. Reaksi alergi ini dapat disebabkan oleh kontak dengan bahan kimia, seperti sabun, deterjen, kosmetik, atau obat-obatan. Reaksi alergi ini dapat menyebabkan gatal-gatal, kemerahan, dan bengkak pada kulit.',
-            'image' => 'allergic-dermatitis.jpg'
+            'image' => null,
         ]);
 
         Artikel::create([
             'judul' => 'Pinjal',
             'slug' => 'Pinjal adalah infeksi kulit yang disebabkan oleh cacing parasit. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
             'isi' => 'Pinjal adalah infeksi kulit yang disebabkan oleh cacing parasit. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'pinjal.jpg'
+            'image' => null,
         ]);
 
         Artikel::create([
             'judul' => 'Feline Acne',
             'slug' => 'Feline acne adalah infeksi kulit yang disebabkan oleh bakteri yang menyerang kelenjar minyak pada kulit kucing.',
             'isi' => 'Feline acne adalah infeksi kulit yang disebabkan oleh bakteri yang menyerang kelenjar minyak pada kulit kucing. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'feline-acne.jpg'
+            'image' => null,
         ]);
 
         Artikel::create([
             'judul' => 'Kulit Berketombe',
             'slug' => 'Kulit berketombe adalah kondisi kulit yang kering dan bersisik. Kondisi ini dapat disebabkan oleh kekurangan vitamin, kelembapan, atau kebersihan.',
             'isi' => 'Kulit berketombe adalah kondisi kulit yang kering dan bersisik. Kondisi ini dapat disebabkan oleh kekurangan vitamin, kelembapan, atau kebersihan. Kulit berketombe dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'kulit-berketombe.jpg'
+            'image' => null,
         ]);
 
         Artikel::create([
             'judul' => 'Kutu Bulu',
             'slug' => 'Kutu bulu adalah infeksi kulit yang disebabkan oleh kutu. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
             'isi' => 'Kutu bulu adalah infeksi kulit yang disebabkan oleh kutu. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'kutu-bulu.jpg'
+            'image' => null,
         ]);
 
         Artikel::create([
             'judul' => 'Tungu Telinga',
             'slug' => 'Tungu telinga adalah infeksi kulit yang disebabkan oleh tungau. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
             'isi' => 'Tungu telinga adalah infeksi kulit yang disebabkan oleh tungau. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'tungu-telinga.jpg'
+            'image' => null,
         ]);
 
 
@@ -643,7 +643,7 @@ class DatabaseSeeder extends Seeder
             'judul' => 'Persia',
             'slug' => 'persia',
             'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
-            'image' => 'persia.jpg'
+            'image' => null,
         ]);
 
 
@@ -651,36 +651,28 @@ class DatabaseSeeder extends Seeder
             'judul' => 'Persia',
             'slug' => 'persia',
             'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
-            'image' => 'persia.jpg'
+            'image' => null,
         ]);
 
         JenisKucing::create([
             'judul' => 'Persia',
             'slug' => 'persia',
             'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
-            'image' => 'persia.jpg'
+            'image' => null,
         ]);
 
         JenisKucing::create([
             'judul' => 'Persia',
             'slug' => 'persia',
             'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
-            'image' => 'persia.jpg'
+            'image' => null,
         ]);
 
         JenisKucing::create([
             'judul' => 'Persia',
             'slug' => 'persia',
             'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
-            'image' => 'persia.jpg'
-        ]);
-
-
-        JenisKucing::create([
-            'judul' => 'Persia',
-            'slug' => 'persia',
-            'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
-            'image' => 'persia.jpg'
+            'image' => null,
         ]);
 
 
@@ -688,7 +680,7 @@ class DatabaseSeeder extends Seeder
             'judul' => 'Persia',
             'slug' => 'persia',
             'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
-            'image' => 'persia.jpg'
+            'image' => null,
         ]);
 
 
@@ -696,7 +688,15 @@ class DatabaseSeeder extends Seeder
             'judul' => 'Persia',
             'slug' => 'persia',
             'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
-            'image' => 'persia.jpg'
+            'image' => null,
+        ]);
+
+
+        JenisKucing::create([
+            'judul' => 'Persia',
+            'slug' => 'persia',
+            'isi' => 'Kucing Persia adalah salah satu ras kucing yang paling populer di dunia. Kucing ini memiliki bulu yang panjang dan lebat, serta wajah yang bulat dan imut. Kucing Persia memiliki karakter yang lembut dan ramah, sehingga cocok untuk dijadikan hewan peliharaan.',
+            'image' => null,
         ]);
 
 
@@ -704,63 +704,63 @@ class DatabaseSeeder extends Seeder
             'judul' => 'Ringworm',
             'slug' => 'ringworm',
             'isi' => 'Ringworm adalah infeksi jamur pada kulit, rambut, atau kuku yang disebabkan oleh jamur dermatofita. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'ringworm.jpg'
+            'image' => null,
         ]);
 
         PenyakitKulit::create([
             'judul' => 'Scabies',
             'slug' => 'scabies',
             'isi' => 'Scabies adalah infeksi kulit yang disebabkan oleh tungau. Tungau ini menyerang kulit dan menyebabkan gatal-gatal. Infeksi ini dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'scabies.jpg'
+            'image' => null,
         ]);
 
         PenyakitKulit::create([
             'judul' => 'Abses',
             'slug' => 'abses',
             'isi' => 'Abses adalah kantung nanah yang terbentuk di dalam jaringan tubuh. Abses dapat terjadi di mana saja di dalam tubuh, dan dapat disebabkan oleh infeksi bakteri, virus, atau jamur. Abses dapat terjadi di kulit, otak, paru-paru, hati, ginjal, atau di dalam rongga mulut.',
-            'image' => 'abses.jpg'
+            'image' => null,
         ]);
 
         PenyakitKulit::create([
             'judul' => 'Allergic Dermatitis',
             'slug' => 'allergic-dermatitis',
             'isi' => 'Allergic dermatitis adalah reaksi alergi yang terjadi pada kulit. Reaksi alergi ini dapat disebabkan oleh kontak dengan bahan kimia, seperti sabun, deterjen, kosmetik, atau obat-obatan. Reaksi alergi ini dapat menyebabkan gatal-gatal, kemerahan, dan bengkak pada kulit.',
-            'image' => 'allergic-dermatitis.jpg'
+            'image' => null,
         ]);
 
         PenyakitKulit::create([
             'judul' => 'Pinjal',
             'slug' => 'pinjal',
             'isi' => 'Pinjal adalah infeksi kulit yang disebabkan oleh cacing parasit. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'pinjal.jpg'
+            'image' => null,
         ]);
 
         PenyakitKulit::create([
             'judul' => 'Feline Acne',
             'slug' => 'feline-acne',
             'isi' => 'Feline acne adalah infeksi kulit yang disebabkan oleh bakteri yang menyerang kelenjar minyak pada kulit kucing. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'feline-acne.jpg'
+            'image' => null,
         ]);
 
         PenyakitKulit::create([
             'judul' => 'Kulit Berketombe',
             'slug' => 'kulit-berketombe',
             'isi' => 'Kulit berketombe adalah kondisi kulit yang kering dan bersisik. Kondisi ini dapat disebabkan oleh kekurangan vitamin, kelembapan, atau kebersihan. Kulit berketombe dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'kulit-berketombe.jpg'
+            'image' => null,
         ]);
 
         PenyakitKulit::create([
             'judul' => 'Kutu Bulu',
             'slug' => 'kutu-bulu',
             'isi' => 'Kutu bulu adalah infeksi kulit yang disebabkan oleh kutu. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'kutu-bulu.jpg'
+            'image' => null,
         ]);
 
         PenyakitKulit::create([
             'judul' => 'Tungu Telinga',
             'slug' => 'tungu-telinga',
             'isi' => 'Tungu telinga adalah infeksi kulit yang disebabkan oleh tungau. Infeksi ini dapat menyerang siapa saja, baik pria maupun wanita, dan dapat menyebar melalui kontak langsung dengan orang yang terinfeksi atau dengan benda yang terkontaminasi.',
-            'image' => 'tungu-telinga.jpg'
+            'image' => null,
         ]);
 
 
@@ -768,77 +768,77 @@ class DatabaseSeeder extends Seeder
             'name' => 'Dr. Andi',
             'alamat' => 'Jl. Raya Bogor No. 1, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-andi.jpg',
+            'image' => null,
         ]);
 
         Dokter::create([
             'name' => 'Dr. Budi',
             'alamat' => 'Jl. Raya Bogor No. 2, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-budi.jpg',
+            'image' => null,
         ]);
 
         Dokter::create([
             'name' => 'Dr. Cici',
             'alamat' => 'Jl. Raya Bogor No. 3, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-cici.jpg',
+            'image' => null,
         ]);
 
         Dokter::create([
             'name' => 'Dr. Dedi',
             'alamat' => 'Jl. Raya Bogor No. 4, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-dedi.jpg',
+            'image' => null,
         ]);
 
         Dokter::create([
             'name' => 'Dr. Eka',
             'alamat' => 'Jl. Raya Bogor No. 5, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-eka.jpg',
+            'image' => null,
         ]);
 
         Dokter::create([
             'name' => 'Dr. Fani',
             'alamat' => 'Jl. Raya Bogor No. 6, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-fani.jpg',
+            'image' => null,
         ]);
 
         Dokter::create([
             'name' => 'Dr. Gita',
             'alamat' => 'Jl. Raya Bogor No. 7, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-gita.jpg',
+            'image' => null,
         ]);
 
         Dokter::create([
             'name' => 'Dr. Hani',
             'alamat' => 'Jl. Raya Bogor No. 8, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-hani.jpg',
+            'image' => null,
         ]);
 
         Dokter::create([
             'name' => 'Dr. Ika',
             'alamat' => 'Jl. Raya Bogor No. 9, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-ika.jpg',
+            'image' => null,
         ]);
 
         Dokter::create([
             'name' => 'Dr. Joko',
             'alamat' => 'Jl. Raya Bogor No. 10, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-joko.jpg',
+            'image' => null,
         ]);
 
         Dokter::create([
             'name' => 'Dr. Kiki',
             'alamat' => 'Jl. Raya Bogor No. 11, Jakarta',
             'telepon' => '08123456789',
-            'image' => 'dr-kiki.jpg',
+            'image' => null,
         ]);
     }
 }

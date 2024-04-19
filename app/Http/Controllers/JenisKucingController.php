@@ -10,7 +10,7 @@ class JenisKucingController extends Controller
     public function index()
     {
         $artikel = JenisKucing::all();
-        return view('admin.pages.jenis-kucing', [
+        return view('admin.pages.data-jenis-kucing', [
             'artikel' => $artikel
         ]);
     }
@@ -68,8 +68,10 @@ class JenisKucingController extends Controller
         $artikel->isi = $request->isi;
 
         if ($request->hasFile('image')) {
-            // hapus foto lama
-            unlink('jenis-kucing/' . $artikel->image);
+            // cek apa ada foto, jika ada hapus
+            if ($artikel->image) {
+                unlink('jenis-kucing/' . $artikel->image);
+            }
             // upload foto baru
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -87,8 +89,11 @@ class JenisKucingController extends Controller
     {
         $artikel = JenisKucing::find($id);
 
-        // hapus foto
-        unlink('jenis-kucing/' . $artikel->image);
+        // cek jika file foto ada
+        if ($artikel->image) {
+            // hapus foto
+            unlink('jenis-kucing/' . $artikel->image);
+        }
 
         $artikel->delete();
 

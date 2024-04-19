@@ -10,7 +10,7 @@ class PenyakitKulitController extends Controller
     public function index()
     {
         $artikel = PenyakitKulit::all();
-        return view('admin.pages.penyakit-kulit', [
+        return view('admin.pages.data-penyakit-kulit', [
             'artikel' => $artikel
         ]);
     }
@@ -68,8 +68,10 @@ class PenyakitKulitController extends Controller
         $artikel->isi = $request->isi;
 
         if ($request->hasFile('image')) {
-            // hapus foto lama
-            unlink('penyakit-kulit/' . $artikel->image);
+            // cek apakah artikel memiliki foto, jika ada hapus foto lama
+            if ($artikel->image) {
+                unlink('penyakit-kulit/' . $artikel->image);
+            }
             // upload foto baru
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -87,8 +89,10 @@ class PenyakitKulitController extends Controller
     {
         $artikel = PenyakitKulit::find($id);
 
-        // hapus foto
-        unlink('penyakit-kulit/' . $artikel->image);
+        // hapus foto dari folder penyakit-kulit
+        if ($artikel->image) {
+            unlink('penyakit-kulit/' . $artikel->image);
+        }
 
         $artikel->delete();
 
