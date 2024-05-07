@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 
 use App\Models\DetailPenyakit;
+use App\Models\Gejala;
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
@@ -20,6 +21,7 @@ class DashboardController extends Controller
         $jumlah_detail_penyakit = DetailPenyakit::count();
         $jumlah_penyakit = Penyakit::count();
         $jumlah_artikel = Artikel::count();
+        $jumlah_gejala = Gejala::count();
 
 
         // Hitung total jumlah riwayat penyakit untuk semua penyakit
@@ -52,6 +54,7 @@ class DashboardController extends Controller
             'jumlah_penyakit' => $jumlah_penyakit,
             'jumlah_artikel' => $jumlah_artikel,
             'nama_penyakit' =>  $ambil_nama_penyakit,
+            'jumlah_gejala' => $jumlah_gejala,
             'persentase' => $ambil_persentase,
         ]);
     }

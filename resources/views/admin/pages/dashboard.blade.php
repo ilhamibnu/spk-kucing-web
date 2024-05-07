@@ -44,7 +44,7 @@
 
                             </div>
                             <span>Gejala</span>
-                            <h3 class="card-title text-nowrap mb-1">{{ $jumlah_detail_penyakit }}</h3>
+                            <h3 class="card-title text-nowrap mb-1">{{ $jumlah_gejala }}</h3>
 
                         </div>
                     </div>
