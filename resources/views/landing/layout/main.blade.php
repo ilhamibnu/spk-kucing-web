@@ -327,7 +327,7 @@
         Swal.fire({
             icon: 'error'
             , title: 'Oops'
-            , text: 'Gagal Melakukan Diagnosa'
+            , text: 'Gagal Melakukan Diagnosa, minimal harus memilih 2 gejala'
         , });
 
     </script>

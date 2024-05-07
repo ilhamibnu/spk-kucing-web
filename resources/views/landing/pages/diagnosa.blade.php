@@ -26,6 +26,9 @@
         <form action="/diagnosa-user" method="POST" class="contactForm">
             @csrf
             @method('POST')
+            <div class="alert alert-warning alert-dismissible fade show mt-2">
+                Minimal harus memilih 2 gejala
+            </div>
             <div class="form-group">
                 <label class="text-black" for="email">Name</label>
                 <input name="nama" type="text" id="email" class="form-control" required>

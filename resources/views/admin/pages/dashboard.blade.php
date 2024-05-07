@@ -43,7 +43,7 @@
                                 </div>
 
                             </div>
-                            <span>Rule</span>
+                            <span>Gejala</span>
                             <h3 class="card-title text-nowrap mb-1">{{ $jumlah_detail_penyakit }}</h3>
 
                         </div>
@@ -106,27 +106,27 @@
 
     @section('script')
     <script>
-        var nama = <?php echo json_encode($nama_penyakit); ?>;
-        var persentase = <?php echo json_encode($persentase); ?>;
+        var nama = < ? php echo json_encode($nama_penyakit); ? > ;
+        var persentase = < ? php echo json_encode($persentase); ? > ;
 
         // Definisikan warna yang ingin Anda gunakan untuk setiap label
         var colors = ['#FF5733', '#33FFC1', '#335BFF', '#FF33C1', '#33FF57', '#5733FF', '#FF335B', '#33C1FF', '#FF5983'];
 
         var options = {
-            series: persentase,
-            chart: {
-                width: 380,
-                type: 'pie',
-            },
-            labels: nama,
-            colors: colors, // Gunakan warna yang telah ditentukan
+            series: persentase
+            , chart: {
+                width: 380
+                , type: 'pie'
+            , }
+            , labels: nama
+            , colors: colors, // Gunakan warna yang telah ditentukan
             responsive: [{
-                breakpoint: 480,
-                options: {
+                breakpoint: 480
+                , options: {
                     chart: {
                         width: 200
-                    },
-                    legend: {
+                    }
+                    , legend: {
                         position: 'bottom'
                     }
                 }
@@ -135,6 +135,7 @@
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
+
     </script>
     @endsection
 
