@@ -106,8 +106,10 @@
 
     @section('script')
     <script>
-        var nama = < ? php echo json_encode($nama_penyakit); ? > ;
-        var persentase = < ? php echo json_encode($persentase); ? > ;
+        var nama = @php echo json_encode($nama_penyakit);
+        @endphp;
+        var persentase = @php echo json_encode($persentase);
+        @endphp;
 
         // Definisikan warna yang ingin Anda gunakan untuk setiap label
         var colors = ['#FF5733', '#33FFC1', '#335BFF', '#FF33C1', '#33FF57', '#5733FF', '#FF335B', '#33C1FF', '#FF5983'];
