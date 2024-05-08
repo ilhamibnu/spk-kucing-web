@@ -32,4 +32,9 @@ class Riwayat extends Model
     {
         return $this->belongsTo(Penyakit::class);
     }
+
+    public function detailriwayatgejala()
+    {
+        return $this->hasMany(DetailRiwayatGejala::class, 'id_riwayat', 'id');
+    }
 }

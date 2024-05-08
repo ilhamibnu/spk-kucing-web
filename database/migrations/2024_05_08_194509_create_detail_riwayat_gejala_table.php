@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_gejala', function (Blueprint $table) {
+        Schema::create('tb_detail_riwayat_gejala', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
-            $table->string('nama');
-            $table->string('foto');
-            $table->string('link_penjelasan');
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_gejala');
+        Schema::dropIfExists('tb_detail_riwayat_gejala');
     }
 };

@@ -14,6 +14,8 @@ class Gejala extends Model
     protected $fillable = [
         'kode',
         'nama',
+        'foto',
+        'link_penjelasan'
     ];
 
     public function getDescriptionForEvent(string $eventName): string
@@ -29,5 +31,10 @@ class Gejala extends Model
     public function penyakit()
     {
         return $this->belongsToMany(Penyakit::class)->withPivot('value_cf');
+    }
+
+    public function detailriwayatgejala()
+    {
+        return $this->hasMany(DetailRiwayatGejala::class, 'id_gejala', 'id');
     }
 }

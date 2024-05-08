@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Gejala;
 use App\Models\Riwayat;
 use Illuminate\Http\Request;
+use App\Models\DetailRiwayatGejala;
 use Illuminate\Support\Facades\Auth;
 
 class DiagnosaUserController extends Controller
@@ -157,6 +158,7 @@ class DiagnosaUserController extends Controller
             }
         }
 
+
         return [
             'hasil_diagnosa' => $hasil_diagnosa,
             'gejala_terpilih' => $gejala_terpilih,
@@ -185,6 +187,17 @@ class DiagnosaUserController extends Controller
             'user_id' => Auth::user()->id,
             'penyakit_id' => $result['cf_max'][2],
         ]);
+
+        $detaildiagnosariwayat = new DetailRiwayatGejala();
+        foreach ($data['diagnosa'] as $input) {
+            if (!empty($input)) {
+                $opts = explode('+', $input);
+                $detaildiagnosariwayat->create([
+                    'id_riwayat' => $riwayat->id,
+                    'id_gejala' => $opts[0],
+                ]);
+            }
+        }
 
         return redirect('/riwayat-user/detail/' . $riwayat->id);
     }

@@ -23,6 +23,39 @@
 </div>
 <section class="bg-light">
     <div class="container">
+        <div class="card">
+            <div class="alert alert-primary">
+                <h5 class="font-weight-bold">Kesimpulan</h5>
+                <p>Berdasarkan dari gejala yang kamu pilih atau alami juga berdasarkan Role/Basis aturan yang sudah ditentukan oleh seorang pakar penyakit maka perhitungan Algoritma Certainty Factor mengambil nilai CF yang paling pinggi yakni <b>{{ number_format(unserialize($riwayat->cf_max)[0], 3) }} ({{ number_format(unserialize($riwayat->cf_max)[0], 3) * 100 }}%)</b> yaitu <b>{{ unserialize($riwayat->cf_max)[1] }}</b></p>
+            </div>
+            <div class="text-center mt-3 mb-3">
+                <a href="/riwayat-user/print/{{ $riwayat->id }}" class="btn btn-primary">Print</a>
+            </div>
+
+            <div class="mb-4">
+                <div class="text-center">
+                    <h5 class="font-weight-bold">Detail Foto Gejala yang kucing kamu alami</h5>
+                </div>
+
+                <div class="row">
+                    @foreach ($detailgejala as $itemdetailgejala )
+                    <div class="col-lg-4">
+                        <div class="card-service wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="header">
+                                <img src="{{ asset('foto_gejala/' . $itemdetailgejala->gejala->foto) }}" alt="">
+                            </div>
+                            <div class="body">
+                                <h5 class="text-secondary">{{ $itemdetailgejala->gejala->nama }}</h5>
+                                <a href="{{ $itemdetailgejala->link_penjelasan }}" class="btn btn-primary">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
         <div class="card-datatable table-responsive">
             <table class="table datatables table-hover responsive nowrap" style="width:100%">
                 <thead>
@@ -83,13 +116,7 @@
             @endforeach
         </div>
         <div class="card">
-            <div class="alert alert-primary">
-                <h5 class="font-weight-bold">Kesimpulan</h5>
-                <p>Berdasarkan dari gejala yang kamu pilih atau alami juga berdasarkan Role/Basis aturan yang sudah ditentukan oleh seorang pakar penyakit maka perhitungan Algoritma Certainty Factor mengambil nilai CF yang paling pinggi yakni <b>{{ number_format(unserialize($riwayat->cf_max)[0], 3) }} ({{ number_format(unserialize($riwayat->cf_max)[0], 3) * 100 }}%)</b> yaitu <b>{{ unserialize($riwayat->cf_max)[1] }}</b></p>
-            </div>
-            <div class="text-center mt-3 mb-3">
-                <a href="/riwayat-user/print/{{ $riwayat->id }}" class="btn btn-primary">Print</a>
-            </div>
+
         </div>
     </div>
 </section>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetailRiwayatGejala;
 use App\Models\Riwayat;
 use Illuminate\Http\Request;
 
@@ -32,10 +33,11 @@ class RiwayatUserController extends Controller
         if (!$cek) {
             return redirect('/riwayat-user');
         }
-
+        $detailgejala = DetailRiwayatGejala::with('gejala')->where('id_riwayat', $id)->get();
         $riwayat = Riwayat::with('penyakit')->find($id);
         return view('landing.pages.detail-diagnosa', [
             'riwayat' => $riwayat,
+            'detailgejala' => $detailgejala,
         ]);
     }
 

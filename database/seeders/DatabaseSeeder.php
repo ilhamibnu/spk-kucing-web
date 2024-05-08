@@ -104,166 +104,232 @@ class DatabaseSeeder extends Seeder
         Gejala::create([
             'kode' => 'G01',
             'nama' => 'Rambut rontok',
+            'foto' => 'gejala1.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+rontok+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G02',
             'nama' => 'Kulit kemerahan',
+            'foto' => 'gejala2.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+kulit+kemerahan+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G03',
             'nama' => 'Gatal-gatal',
+            'foto' => 'gejala3.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+gatal+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G04',
             'nama' => 'Kerak berbentuk cincin',
+            'foto' => 'gejala4.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+kerak+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G05',
             'nama' => 'Botak di area penyakit',
+            'foto' => 'gejala5.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+botak+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G06',
             'nama' => 'Kulit berkerak',
+            'foto' => 'gejala6.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+berkerak+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G07',
             'nama' => 'Gatal telinga',
+            'foto' => 'gejala7.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+gatal+telinga+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G08',
             'nama' => 'Kebotakan pada daerah tubuh',
+            'foto' => 'gejala8.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+kebotakan+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G09',
             'nama' => 'Kulit kering',
+            'foto' => 'gejala9.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+kulit+kering+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G10',
             'nama' => 'Kerak pada wajah, telinga, kaki, dan ekor',
+            'foto' => 'gejala10.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+kerak+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G11',
             'nama' => 'Kulit terluka',
+            'foto' => 'gejala11.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+luka+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G12',
             'nama' => 'Bengkak dengan konsistensi lunak',
+            'foto' => 'gejala12.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+bengkak+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G13',
             'nama' => 'Respon sakit ketika area luka dipegang',
+            'foto' => 'gejala13.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+sakit+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G14',
             'nama' => 'Luka bernanah',
+            'foto' => 'gejala14.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+nanah+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G15',
             'nama' => 'Demam',
+            'foto' => 'gejala15.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+demam+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G16',
             'nama' => 'Nafsu makan berkurang',
+            'foto' => 'gejala16.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+nafsu+makan+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G17',
             'nama' => 'Gangguan pencernaan',
+            'foto' => 'gejala17.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+pencernaan+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G18',
             'nama' => 'Kutu loncat pipih',
+            'foto' => 'gejala18.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+kutu+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G19',
             'nama' => 'Bulu pada ekor menipis',
+            'foto' => 'gejala19.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+bulu+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G20',
             'nama' => 'Ada bintik hitam/merah',
+            'foto' => 'gejala20.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+bintik+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G21',
             'nama' => 'Penebalan pada bagian dagu',
+            'foto' => 'gejala21.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+penebalan+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G22',
             'nama' => 'Kulit berminyak',
+            'foto' => 'gejala22.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+minyak+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G23',
             'nama' => 'Bintik putih di rambut',
+            'foto' => 'gejala23.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+bintik+putih+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G24',
             'nama' => 'Terlihat lemah & lesu',
+            'foto' => 'gejala24.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+lemah+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G25',
             'nama' => 'Peradangan akibat gigitan',
+            'foto' => 'gejala25.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+peradangan+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G26',
             'nama' => 'Mengeluarkan nanah',
+            'foto' => 'gejala26.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+nanah+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G27',
             'nama' => 'Menggaruk belakang telinga',
+            'foto' => 'gejala27.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+menggaruk+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G28',
             'nama' => 'Benjolan seperti bisul',
+            'foto' => 'gejala28.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+benjolan+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G29',
             'nama' => 'Kotoran telinga lebih banyak dari biasanya',
+            'foto' => 'gejala29.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+kotoran+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G30',
             'nama' => 'Sering menggaruk',
+            'foto' => 'gejala30.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+menggaruk+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G31',
             'nama' => 'Luka berbentuk benjolan',
+            'foto' => 'gejala31.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+luka+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G32',
             'nama' => 'Penebalan Kerak',
+            'foto' => 'gejala32.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+penebalan+pada+kucing'
         ]);
 
         Gejala::create([
             'kode' => 'G33',
             'nama' => 'Rambut tidak berkilau',
+            'foto' => 'gejala33.jpg',
+            'link_penjelasan' => 'https://www.google.com/search?q=penyakit+rambut+pada+kucing'
         ]);
 
         // Ringworm

@@ -30,8 +30,10 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Image</th>
                         <th>Kode</th>
                         <th>Name</th>
+                        <th>Link</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -39,8 +41,14 @@
                     @foreach ($gejala as $data )
                     <tr>
                         <td>{{$loop->iteration}}</td>
+                        <td>
+                            <img src="{{ asset('foto_gejala/' . $data->foto) }}" alt="" width="100px">
+                        </td>
                         <td>{{$data->kode}}</td>
                         <td>{{$data->nama}}</td>
+                        <td>
+                            <a href="{{ $data->link_penjelasan }}" target="blank" class="btn btn-info">Link</a>
+                        </td>
 
                         <td>
                             <button type="button" data-bs-toggle="modal" data-bs-target="#Edit{{ $data->id }}" class="btn btn-warning">Edit</button>
@@ -80,10 +88,16 @@
                                         <h5 class="modal-title" id="exampleModalLabel1">Edit</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <form action="/gejala/{{ $data->id }}" method="post">
+                                    <form action="/gejala/{{ $data->id }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         @method('put')
                                         <div class="modal-body">
+                                            <div class="row">
+                                                <div class="mb-3">
+                                                    <label for="formFile" class="form-label">Foto</label>
+                                                    <input class="form-control" name="foto" type="file" id="formFile">
+                                                </div>
+                                            </div>
                                             <div class="row">
                                                 <div class="col mb-3">
                                                     <label for="nameBasic" class="form-label">Kode</label>
@@ -94,6 +108,12 @@
                                                 <div class="col mb-3">
                                                     <label for="nameBasic" class="form-label">Name</label>
                                                     <input type="text" name="nama" value="{{ $data->nama }}" id="nameBasic" class="form-control" placeholder="Enter Name" required />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col mb-3">
+                                                    <label for="nameBasic" class="form-label">Link Penjelasan</label>
+                                                    <input type="text" name="link_penjelasan" value="{{ $data->link_penjelasan }}" id="nameBasic" class="form-control" placeholder="Enter Name" required />
                                                 </div>
                                             </div>
                                         </div>
@@ -121,10 +141,16 @@
                         <h5 class="modal-title" id="exampleModalLabel1">Add</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="/gejala" method="post">
+                    <form action="/gejala" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('post')
                         <div class="modal-body">
+                            <div class="row">
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Foto</label>
+                                    <input class="form-control" name="foto" type="file" id="formFile">
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col mb-3">
                                     <label for="nameBasic" class="form-label">Kode</label>
@@ -137,7 +163,12 @@
                                     <input type="text" name="nama" value="" id="nameBasic" class="form-control" placeholder="Enter Name" required />
                                 </div>
                             </div>
-
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <label for="nameBasic" class="form-label">Link Penjelasan</label>
+                                    <input type="text" name="link_penjelasan" id="nameBasic" class="form-control" placeholder="Enter Name" required />
+                                </div>
+                            </div>
 
 
                         </div>
