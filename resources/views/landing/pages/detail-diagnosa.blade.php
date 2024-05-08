@@ -46,7 +46,7 @@
                             </div>
                             <div class="body">
                                 <h5 class="text-secondary">{{ $itemdetailgejala->gejala->nama }}</h5>
-                                <a href="{{ $itemdetailgejala->link_penjelasan }}" class="btn btn-primary">Detail</a>
+                                <a href="{{ $itemdetailgejala->gejala->link_penjelasan }}" target="blank" class="btn btn-primary">Detail</a>
                             </div>
                         </div>
                     </div>
