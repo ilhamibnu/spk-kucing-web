@@ -34,16 +34,31 @@
                 <input name="nama" type="text" id="email" class="form-control" required>
             </div>
             @foreach ($gejala as $key => $value )
-            <div class="form-group">
-                <label class="text-black" for="email">{{ $value->nama }}</label>
-                <select class="form-control" name="diagnosa[]" id="exampleFormControlSelect1" aria-label="Default select example">
-                    <option selected value="">Tidak Tahu</option>
-                    <option value="{{ $value->id }}+0.2">Tidak Yakin</option>
-                    <option value="{{ $value->id }}+0.4">Ya, Sedikit Yakin</option>
-                    <option value="{{ $value->id }}+0.6">Ya, Cukup Yakin</option>
-                    <option value="{{ $value->id }}+0.8">Ya, Yakin</option>
-                    <option value="{{ $value->id }}+1">Ya, Sangat Yakin</option>
-                </select>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-black" for="email">{{ $value->nama }}</label>
+                        <select class="form-control" name="diagnosa[]" id="exampleFormControlSelect1" aria-label="Default select example">
+                            <option selected value="">Tidak Tahu</option>
+                            <option value="{{ $value->id }}+0.2">Tidak Yakin</option>
+                            <option value="{{ $value->id }}+0.4">Ya, Sedikit Yakin</option>
+                            <option value="{{ $value->id }}+0.6">Ya, Cukup Yakin</option>
+                            <option value="{{ $value->id }}+0.8">Ya, Yakin</option>
+                            <option value="{{ $value->id }}+1">Ya, Sangat Yakin</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="mt-4">
+                            <img src="{{ asset('foto_gejala/'.$value->foto) }}" alt="" class="img-fluid">
+                        </div>
+                        <div class="mt-3 text-center">
+                            <a href="{{ $value->link_penjelasan }}" class="btn btn-primary">Detail</a>
+                        </div>
+
+                    </div>
+                </div>
             </div>
             @endforeach
             <div class="row form-group">
