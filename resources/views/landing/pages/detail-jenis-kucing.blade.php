@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="post-content">
-                        <p>{{ $artikel->isi }}</p>
+                        <p>{!! nl2br(e($artikel->isi)) !!}</p>
 
                     </div>
                 </div>
