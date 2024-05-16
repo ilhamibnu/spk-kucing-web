@@ -33,8 +33,11 @@
                     {{ $riwayat->penyakit->solusi }}
                 </p>
             </div>
-            <div class="text-center mt-3 mb-3">
-                <a href="/riwayat-user/print/{{ $riwayat->id }}" class="btn btn-primary">Print</a>
+            <div class="text-center ">
+                <div class="mt-3 mb-3">
+                    <a href="/riwayat-user/print/{{ $riwayat->id }}" class="btn btn-primary">Print</a>
+                    <a href="/diagnosa-user/" class="btn btn-primary">Diagnosa Ulang</a>
+                </div>
             </div>
 
             <div class="mb-4">
